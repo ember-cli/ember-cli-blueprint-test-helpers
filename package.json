@@ -6,8 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "ember-addon": {
+    "main": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ember-cli/ember-cli-blueprint-test-helpers.git"
+  },
+  "keywords": [
+    "ember-addon",
+    "ember"
+  ],
+  "author": "Jake Bixby",
+  "license": "MIT",
   "dependencies": {
     "chai": "^3.3.0",
     "chai-as-promised": "^5.1.0",
@@ -16,5 +27,6 @@
     "fs-extra": "^0.24.0",
     "lodash": "^3.6.0",
     "tmp-sync": "^1.0.0"
-  }
+  },
+  "devDependencies": {}
 }
