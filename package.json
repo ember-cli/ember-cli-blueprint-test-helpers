@@ -1,0 +1,20 @@
+{
+  "name": "ember-cli-blueprint-test-helpers",
+  "version": "0.1.0",
+  "description": "Blueprint test helpers for ember-cli. Mocks ember-cli for generate and destroy commands.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.3.0",
+    "chai-as-promised": "^5.1.0",
+    "ember-cli": "^1.13.8",
+    "exists-sync": "0.0.3",
+    "fs-extra": "^0.24.0",
+    "lodash": "^3.6.0",
+    "tmp-sync": "^1.0.0"
+  }
+}
