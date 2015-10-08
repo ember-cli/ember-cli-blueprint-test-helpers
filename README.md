@@ -18,8 +18,8 @@ Generate a blueprint test scaffold, which will also install `ember-cli-blueprint
 Setup a blueprint test with a timeout as well as before, after, beforeEach, and afterEach hooks:
 ```
 describe('Acceptance: ember generate', function() {
-  // pass in test instance, and timeout duration (default 20000)
-  setupTestHooks(this, 20000);
+  // pass in test instance, and timeout duration (default 20000), and the tmp environment
+  setupTestHooks(this, 20000, tmpenv);
   
 ```
 
@@ -37,9 +37,12 @@ The options should contain a files object, as well as any of the following optio
 * files (array) (object: {file (string): 'path-to-file', contains (array): ['file contents to compare']})
 
 ```
+var EOL                = require('os').EOL;
+var tmpenv             = require('ember-cli-blueprint-test-helpers/lib/helpers/tmp-env');
 var BlueprintHelpers   = require('ember-cli-blueprint-test-helpers/lib/helpers/blueprint-helper');
 var generateAndDestroy = BlueprintHelpers.generateAndDestroy
 ...
+  setupTestHooks(this, 20000, tmpenv);
 
   it('blueprint test', function() {
     return generateAndDestroy(['my-blueprint', 'foo'], {
@@ -55,4 +58,4 @@ var generateAndDestroy = BlueprintHelpers.generateAndDestroy
     });
   });
 ```
-Use EOL for line breaks, as it provides cross platform 
+Use EOL for line breaks, as it provides cross platform support.
