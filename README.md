@@ -35,6 +35,10 @@ The options should contain a files object, as well as any of the following optio
 * podModulePrefix (string)
 * target (string) ('app', 'addon', 'inRepoAddon')
 * files (array) (object: {file (string): 'path-to-file', contains (array): ['file contents to compare']})
+* beforeGenerate (function)
+* afterGenerate (function)
+* beforeDestroy (function)
+* afterDestroy (function)
 
 ```
 var EOL                = require('os').EOL;
