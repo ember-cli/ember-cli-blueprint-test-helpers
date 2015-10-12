@@ -7,7 +7,7 @@ var BlueprintHelpers   = require('ember-cli-blueprint-test-helpers/lib/helpers/b
 var generateAndDestroy = BlueprintHelpers.generateAndDestroy;
 
 describe('Acceptance: ember generate and destroy <%= blueprintName %>', function() {
-  setupTestHooks(this, 20000, tmpenv);;
+  setupTestHooks(this, 20000, tmpenv);
   
   it('<%= blueprintName %> foo', function() {
     // pass any additional command line options in the arguments array
