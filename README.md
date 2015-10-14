@@ -14,7 +14,7 @@ Install ember-cli-blueprint-test-helpers
 Running Tests
 -------------
 
-To run the blueprint tests, run `node tests/blueprint-runner.js`.
+To run the blueprint tests, run `node tests/nodetest-runner.js`.
 For convenience and CI purposes you can add the following to your `package.json`:
 ```
 "scripts": {
