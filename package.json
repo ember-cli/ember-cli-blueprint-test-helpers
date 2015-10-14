@@ -20,7 +20,7 @@
   "author": "Jake Bixby",
   "license": "MIT",
   "dependencies": {
-    "ember-cli-internal-test-helpers": "^0.3.0",
+    "ember-cli-internal-test-helpers": "^0.4.0",
     "chai": "^3.3.0",
     "chai-as-promised": "^5.1.0",
     "exists-sync": "0.0.3",
