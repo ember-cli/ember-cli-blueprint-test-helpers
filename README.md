@@ -21,7 +21,7 @@ For convenience and CI purposes you can add the following to your `package.json`
   "nodetest": "node tests/nodetest-runner.js
 }
 ```
-Then you can use `npm nodetest` to run.
+Then you can use `npm run nodetest` to run.
 
 Generating Blueprint Tests
 --------------------------
