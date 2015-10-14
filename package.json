@@ -23,12 +23,15 @@
     "ember-cli-internal-test-helpers": "^0.3.0",
     "chai": "^3.3.0",
     "chai-as-promised": "^5.1.0",
-    "ember-cli": "^1.13.8",
     "exists-sync": "0.0.3",
     "fs-extra": "^0.24.0",
     "lodash": "^3.6.0",
     "tmp-sync": "^1.0.0",
     "walk-sync": "^0.2.5"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "ember-cli": "^1.13.8",
+    "mocha-only-detector": "0.0.2",
+    "rimraf": "^2.4.3"
+  }
 }
