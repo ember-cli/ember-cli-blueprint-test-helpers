@@ -20,9 +20,10 @@
   "author": "Jake Bixby",
   "license": "MIT",
   "dependencies": {
-    "ember-cli-internal-test-helpers": "^0.4.0",
     "chai": "^3.3.0",
     "chai-as-promised": "^5.1.0",
+    "debug": "^2.2.0",
+    "ember-cli-internal-test-helpers": "^0.4.0",
     "exists-sync": "0.0.3",
     "fs-extra": "^0.24.0",
     "lodash": "^3.6.0",

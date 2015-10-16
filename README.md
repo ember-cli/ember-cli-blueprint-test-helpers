@@ -70,7 +70,7 @@ The options should contain a files object, as well as any of the following optio
 * __usePods__ _(boolean)_: Sets up `.ember-cli` file with `"usePods": true`. Default: false
 * __podModulePrefix__ _(boolean)_: Sets up `config/environment.js` with 'app/pods' as the `podModulePrefix`. Default: false
 * __target__ _(string)_: Defines the type of project to setup for the test. Recognized values: __'app'__, __'addon'__, __'inRepoAddon'__
-* __files__ _(array)_: Array of files to assert, represented by objects with `file` and `contains` properties. Example object: `{file: 'path-to-file', contains: ['file contents to compare'], doesNotContain: ['file contents that shouldn\'t be present']}`
+* __files__ _(array)_: Array of files to assert, represented by objects with `file`, `exists`, `contains`, or `doesNotContain` properties. Example object: `{file: 'path-to-file', contains: ['file contents to compare'], doesNotContain: ['file contents that shouldn\'t be present'], exists: true}`
 * __throws__ _(regexp / / or object)_: Expected error message or excerpt to assert. Optionally, can be an object containing a `message` and `type` property. The `type` is a string of the error name. Example RegExp: `/Expected error message text./` Example object: `{message: /Expected message/, type: 'SilentError'}`
 * __beforeGenerate__ _(function)_: Hook to execute before generating blueprint. Can be used for additional setup and assertions.
 * __afterGenerate__ _(function)_: Hook to execute after generating blueprint. Can be used for additional setup and assertions.
