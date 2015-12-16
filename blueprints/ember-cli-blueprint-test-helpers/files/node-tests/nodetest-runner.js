@@ -20,7 +20,7 @@ var mocha = new Mocha({
   timeout: 5000,
   reporter: 'spec'
 });
-var testFiles = glob.sync(root + 'node-tests/**/*-test.js');
+var testFiles = glob.sync(root + '/**/*-test.js');
 /*var jshintPosition = testFiles.indexOf('tests/unit/jshint-test.js');
 var jshint = testFiles.splice(jshintPosition, 1);
 
