@@ -4,7 +4,7 @@ module.exports = {
   fileMapTokens: function() {
     return {
       __root__: function(options) {
-        return 'blueprints';
+        return 'node-tests/blueprints';
       },
       __name__: function(options) {
         return options.locals.blueprintName;
