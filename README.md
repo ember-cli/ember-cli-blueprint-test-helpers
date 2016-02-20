@@ -14,7 +14,7 @@ Install ember-cli-blueprint-test-helpers
 Running Tests
 -------------
 
-To run the blueprint tests, run `node tests/nodetest-runner.js`.
+To run the blueprint tests, run `node node-tests/nodetest-runner.js`.
 For convenience and CI purposes you can add the following to your `package.json`:
 ```json
 "scripts": {
@@ -29,9 +29,9 @@ Generating Blueprint Tests
 Generate a blueprint test scaffold using the blueprint-test blueprint.
 `ember g blueprint-test my-blueprint`
 
-Unlike normal tests, the blueprint test will be generated inside the blueprint folder as:
+The blueprint test will be generated inside the node-tests/blueprint folder as:
 ```
-  blueprints/my-blueprint/blueprint-nodetest.js
+  node-tests/blueprints/my-blueprint-nodetest.js
 ```
 The minimum common setup is in the generated test, setup for generating and destroying a blueprint in one test.
 
