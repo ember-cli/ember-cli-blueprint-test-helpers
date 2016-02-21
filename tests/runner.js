@@ -8,7 +8,6 @@ var mocha = new Mocha({
 });
 
 var arg = process.argv[2];
-var root = 'tests/';
 
 function addFiles(mocha, files) {
   glob.sync(files).forEach(mocha.addFile.bind(mocha));

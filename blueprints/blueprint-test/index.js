@@ -1,9 +1,7 @@
-var Promise = require('ember-cli/lib/ext/promise');
-
 module.exports = {
   fileMapTokens: function() {
     return {
-      __root__: function(options) {
+      __root__: function(/* options */) {
         return 'node-tests/blueprints';
       },
       __name__: function(options) {
