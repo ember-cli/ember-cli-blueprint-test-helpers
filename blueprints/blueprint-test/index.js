@@ -11,11 +11,11 @@ module.exports = {
       }
     };
   },
-  
+
   locals: function(options) {
     return {
       blueprintName: options.entity.name
     };
   }
-  
+
 };
