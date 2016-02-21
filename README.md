@@ -16,7 +16,7 @@ Running Tests
 
 To run the blueprint tests, run `node tests/nodetest-runner.js`.
 For convenience and CI purposes you can add the following to your `package.json`:
-```
+```json
 "scripts": {
   "nodetest": "node tests/nodetest-runner.js
 }
@@ -39,12 +39,11 @@ Test Setup
 ----------
 
 The `setupTestHooks` convenience method sets up a blueprint test with a timeout as well as before, after, beforeEach, and afterEach hooks:
-```
 
+```js
 describe('Acceptance: ember generate', function() {
   // pass in test instance, and an optional options object.
   setupTestHooks(this, {timeout: 1000});
-  
 ```
 
 If you need to override or add to any of the hooks, you may pass a function in the options.
@@ -79,8 +78,10 @@ The options should contain a files object, as well as any of the following optio
 
 Example Tests
 -------------
+
 The following is a basic test, asserting `my-blueprint` generated the files in the `files` array and that their content matches, and then that the blueprint was destroyed and that the files in the `files` array were properly removed.
-```
+
+```js
 var EOL                = require('os').EOL;
 var setupTestHooks     = require('ember-cli-blueprint-test-helpers/lib/helpers/setup');
 var BlueprintHelpers   = require('ember-cli-blueprint-test-helpers/lib/helpers/blueprint-helper');
@@ -103,18 +104,22 @@ describe('Acceptance: ember generate and destroy blueprint', function() {
     });
   });
 ```
+
 Use EOL for line breaks, as it provides cross platform support.
 
 To assert that an error is thrown when incorrect input is used, you can use the `throws` option. The throws option simply requires a regex of the full or partial error message.
-```
+
+```js
 it('adapter application cannot extend from --base-class=application', function() {
   return generateAndDestroy(['adapter', 'application', '--base-class=application'], {
     throws: /Adapters cannot extend from themself/
   });
 });
 ```
+
 You can also pass an object containing the message and error type.
-```
+
+```js
 it('adapter application cannot extend from --base-class=application', function() {
   return generateAndDestroy(['adapter', 'application', '--base-class=application'], {
     throws: { 
@@ -126,7 +131,8 @@ it('adapter application cannot extend from --base-class=application', function()
 ```
 
 To generate another blueprint beforehand, you can use the `afterGenerate` hook to do your actual assertions, like in the example below
-```
+
+```js
 it('adapter extends from application adapter if present', function() {
   return generateAndDestroy(['adapter', 'application'], {
     afterGenerate: function() {
@@ -144,9 +150,10 @@ it('adapter extends from application adapter if present', function() {
   });
 });
 ```
+
 To setup a test project with a `podModulePrefix` or `usePods` setting, use the following options:
 
-```
+```js
 it('blueprint test', function() {
   return generateAndDestroy(['my-blueprint', 'foo'], {
     usePods: true,
@@ -156,7 +163,8 @@ it('blueprint test', function() {
 ```
 
 To test generating into addons, in-repo-addons, and dummy projects, you can use the `target` option:
-```
+
+```js
 it('blueprint test', function() {
   return generateAndDestroy(['my-blueprint', 'foo'], {
     // supported options are 'app', 'addon', and 'inRepoAddon'
