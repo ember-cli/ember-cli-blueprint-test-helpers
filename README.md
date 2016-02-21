@@ -82,7 +82,6 @@ Example Tests
 The following is a basic test, asserting `my-blueprint` generated the files in the `files` array and that their content matches, and then that the blueprint was destroyed and that the files in the `files` array were properly removed.
 
 ```js
-var EOL                = require('os').EOL;
 var setupTestHooks     = require('ember-cli-blueprint-test-helpers/lib/helpers/setup');
 var BlueprintHelpers   = require('ember-cli-blueprint-test-helpers/lib/helpers/blueprint-helper');
 var generateAndDestroy = BlueprintHelpers.generateAndDestroy;
@@ -97,15 +96,13 @@ describe('Acceptance: ember generate and destroy blueprint', function() {
           file: 'path/to/file.js',
           contains: [
             'file contents to match',
-            'more file contents' + EOL
+            'more file contents\n'
           ]
         }
       ]
     });
   });
 ```
-
-Use EOL for line breaks, as it provides cross platform support.
 
 To assert that an error is thrown when incorrect input is used, you can use the `throws` option. The throws option simply requires a regex of the full or partial error message.
 
