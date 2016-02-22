@@ -18,7 +18,7 @@ To run the blueprint tests, run `node tests/nodetest-runner.js`.
 For convenience and CI purposes you can add the following to your `package.json`:
 ```json
 "scripts": {
-  "nodetest": "node tests/nodetest-runner.js
+  "nodetest": "node node-tests/nodetest-runner.js"
 }
 ```
 Then you can use `npm run nodetest` to run.
