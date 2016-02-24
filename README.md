@@ -1,5 +1,6 @@
 ember-cli-blueprint-test-helpers
 ================================
+[![Build Status](https://travis-ci.org/ember-cli/ember-cli-blueprint-test-helpers.svg?branch=master)](https://travis-ci.org/ember-cli/ember-cli-blueprint-test-helpers)
 
 About
 -----
