@@ -70,6 +70,15 @@ The options should contain a files object, as well as any of the following optio
 * __usePods__ _(boolean)_: Sets up `.ember-cli` file with `"usePods": true`. Default: false
 * __podModulePrefix__ _(boolean)_: Sets up `config/environment.js` with 'app/pods' as the `podModulePrefix`. Default: false
 * __target__ _(string)_: Defines the type of project to setup for the test. Recognized values: __'app'__, __'addon'__, __'inRepoAddon'__
+* __assertions__ _(array)_: An array of custom assertions to make after the blueprint has been generated, but before it has been destroyed. Generally you would want to use helper functions that return a Chai assertion.
+Example:
+
+  ```js
+  assertions: [
+    expect(foo).to.be.ok
+  ]
+  ```
+
 * __packages__ _(array)_: A list of packages that should be removed from or added to the `package.json` file after the project has been set up (only affects the test this option is set for). Example:
   
   ```js
@@ -78,8 +87,32 @@ The options should contain a files object, as well as any of the following optio
     { name: 'ember-cli-mocha', dev: true, version: '~1.0.2' }
   ]
   ```
-* __files__ _(array)_: Array of files to assert, represented by objects with `file`, `exists`, `contains`, or `doesNotContain` properties. Example object: `{file: 'path-to-file', contains: ['file contents to compare'], doesNotContain: ['file contents that shouldn\'t be present'], exists: true}`
-* __throws__ _(regexp / / or object)_: Expected error message or excerpt to assert. Optionally, can be an object containing a `message` and `type` property. The `type` is a string of the error name. Example RegExp: `/Expected error message text./` Example object: `{message: /Expected message/, type: 'SilentError'}`
+* __files__ _(array)_: Array of files to assert, represented by objects with `file`, `exists`, `contains`, or `doesNotContain` properties. 
+Example object: 
+
+  ```js
+  files: [
+    {
+      file: 'path-to-file.js', 
+      contains: ['file contents to compare'], 
+      doesNotContain: ['file contents that shouldn\'t be present'], 
+      exists: true //default true
+    }
+  ]
+  ```
+* __throws__ _(regexp / / or object)_: Expected error message or excerpt to assert. Optionally, can be an object containing a `message` and `type` property. The `type` is a string of the error name. Example RegExp: 
+
+  ```js
+  /Expected error message text./
+  ``` 
+Example object: 
+
+  ```js
+  {
+    message: /Expected message/, 
+    type: 'SilentError'
+  }
+  ```
 * __beforeGenerate__ _(function)_: Hook to execute before generating blueprint. Can be used for additional setup and assertions.
 * __afterGenerate__ _(function)_: Hook to execute after generating blueprint. Can be used for additional setup and assertions.
 * __beforeDestroy__ _(function)_: Hook to execute before destroying blueprint. Can be used for additional setup and assertions.
