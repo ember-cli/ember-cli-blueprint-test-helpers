@@ -32,7 +32,7 @@ Generate a blueprint test scaffold using the blueprint-test blueprint.
 
 The blueprint test will be generated inside the node-tests/blueprint folder as:
 ```
-  node-tests/blueprints/my-blueprint-nodetest.js
+  node-tests/blueprints/my-blueprint-test.js
 ```
 The minimum common setup is in the generated test, setup for generating and destroying a blueprint in one test.
 
