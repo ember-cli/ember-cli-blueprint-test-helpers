@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint blueprints lib tests",
-    "test": "npm run lint"
+    "test": "npm run lint && npm run nodetest",
+    "nodetest": "node tests/runner.js"
   },
   "ember-addon": {
     "main": "index.js"
