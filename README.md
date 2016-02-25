@@ -1,5 +1,6 @@
 ember-cli-blueprint-test-helpers
 ================================
+[![Build Status](https://travis-ci.org/ember-cli/ember-cli-blueprint-test-helpers.svg?branch=master)](https://travis-ci.org/ember-cli/ember-cli-blueprint-test-helpers)
 
 About
 -----
@@ -14,7 +15,7 @@ Install ember-cli-blueprint-test-helpers
 Running Tests
 -------------
 
-To run the blueprint tests, run `node tests/nodetest-runner.js`.
+To run the blueprint tests, run `node node-tests/nodetest-runner.js`.
 For convenience and CI purposes you can add the following to your `package.json`:
 ```json
 "scripts": {
@@ -29,9 +30,9 @@ Generating Blueprint Tests
 Generate a blueprint test scaffold using the blueprint-test blueprint.
 `ember g blueprint-test my-blueprint`
 
-Unlike normal tests, the blueprint test will be generated inside the blueprint folder as:
+The blueprint test will be generated inside the node-tests/blueprint folder as:
 ```
-  blueprints/my-blueprint/blueprint-nodetest.js
+  node-tests/blueprints/my-blueprint-nodetest.js
 ```
 The minimum common setup is in the generated test, setup for generating and destroying a blueprint in one test.
 
@@ -68,6 +69,8 @@ The commandArgs should contain any commandline properties and options that would
 The options should contain a files object, as well as any of the following options:
 * __usePods__ _(boolean)_: Sets up `.ember-cli` file with `"usePods": true`. Default: false
 * __podModulePrefix__ _(boolean)_: Sets up `config/environment.js` with 'app/pods' as the `podModulePrefix`. Default: false
+* __skipInit__ _(boolean)_: Skips the temporary project init step for situations where the project has already been setup. Most commonly used when generating inside the `afterGenerate` hook.
+
 * __target__ _(string)_: Defines the type of project to setup for the test. Recognized values: __'app'__, __'addon'__, __'inRepoAddon'__
 * __packages__ _(array)_: A list of packages that should be removed from or added to the `package.json` file after the project has been set up (only affects the test this option is set for). Example:
   
@@ -77,8 +80,32 @@ The options should contain a files object, as well as any of the following optio
     { name: 'ember-cli-mocha', dev: true, version: '~1.0.2' }
   ]
   ```
-* __files__ _(array)_: Array of files to assert, represented by objects with `file`, `exists`, `contains`, or `doesNotContain` properties. Example object: `{file: 'path-to-file', contains: ['file contents to compare'], doesNotContain: ['file contents that shouldn\'t be present'], exists: true}`
-* __throws__ _(regexp / / or object)_: Expected error message or excerpt to assert. Optionally, can be an object containing a `message` and `type` property. The `type` is a string of the error name. Example RegExp: `/Expected error message text./` Example object: `{message: /Expected message/, type: 'SilentError'}`
+* __files__ _(array)_: Array of files to assert, represented by objects with `file`, `exists`, `contains`, or `doesNotContain` properties. 
+Example object: 
+
+  ```js
+  files: [
+    {
+      file: 'path-to-file.js', 
+      contains: ['file contents to compare'], 
+      doesNotContain: ['file contents that shouldn\'t be present'], 
+      exists: true //default true
+    }
+  ]
+  ```
+* __throws__ _(regexp / / or object)_: Expected error message or excerpt to assert. Optionally, can be an object containing a `message` and `type` property. The `type` is a string of the error name. Example RegExp: 
+
+  ```js
+  /Expected error message text./
+  ``` 
+Example object: 
+
+  ```js
+  {
+    message: /Expected message/, 
+    type: 'SilentError'
+  }
+  ```
 * __beforeGenerate__ _(function)_: Hook to execute before generating blueprint. Can be used for additional setup and assertions.
 * __afterGenerate__ _(function)_: Hook to execute after generating blueprint. Can be used for additional setup and assertions.
 * __beforeDestroy__ _(function)_: Hook to execute before destroying blueprint. Can be used for additional setup and assertions.
@@ -135,13 +162,15 @@ it('adapter application cannot extend from --base-class=application', function()
 });
 ```
 
-To generate another blueprint beforehand, you can use the `afterGenerate` hook to do your actual assertions, like in the example below
+To generate another blueprint beforehand, you can use the `afterGenerate` hook to do your actual assertions, like in the example below. Be sure to include the `skipInit` option inside the `afterGenerate` hook to prevent re-initializing the temporary project, which can lead to problems.
 
 ```js
 it('adapter extends from application adapter if present', function() {
   return generateAndDestroy(['adapter', 'application'], {
     afterGenerate: function() {
       return generateAndDestroy(['adapter', 'foo'], {
+        // prevents this second generateAndDestroy from running init
+        skipInit: true,
         files: [
           {
             file:'app/adapters/foo.js',
