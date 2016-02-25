@@ -69,16 +69,9 @@ The commandArgs should contain any commandline properties and options that would
 The options should contain a files object, as well as any of the following options:
 * __usePods__ _(boolean)_: Sets up `.ember-cli` file with `"usePods": true`. Default: false
 * __podModulePrefix__ _(boolean)_: Sets up `config/environment.js` with 'app/pods' as the `podModulePrefix`. Default: false
+* __skipInit__ _(boolean)_: Skips the temporary project init step for situations where the project has already been setup. Most commonly used when generating inside the `afterGenerate` hook.
+
 * __target__ _(string)_: Defines the type of project to setup for the test. Recognized values: __'app'__, __'addon'__, __'inRepoAddon'__
-* __assertions__ _(array)_: An array of custom assertions to make after the blueprint has been generated, but before it has been destroyed. Generally you would want to use helper functions that return a Chai assertion.
-Example:
-
-  ```js
-  assertions: [
-    expect(foo).to.be.ok
-  ]
-  ```
-
 * __packages__ _(array)_: A list of packages that should be removed from or added to the `package.json` file after the project has been set up (only affects the test this option is set for). Example:
   
   ```js
@@ -169,13 +162,15 @@ it('adapter application cannot extend from --base-class=application', function()
 });
 ```
 
-To generate another blueprint beforehand, you can use the `afterGenerate` hook to do your actual assertions, like in the example below
+To generate another blueprint beforehand, you can use the `afterGenerate` hook to do your actual assertions, like in the example below. Be sure to include the `skipInit` option inside the `afterGenerate` hook to prevent re-initializing the temporary project, which can lead to problems.
 
 ```js
 it('adapter extends from application adapter if present', function() {
   return generateAndDestroy(['adapter', 'application'], {
     afterGenerate: function() {
       return generateAndDestroy(['adapter', 'foo'], {
+        // prevents this second generateAndDestroy from running init
+        skipInit: true,
         files: [
           {
             file:'app/adapters/foo.js',
