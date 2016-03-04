@@ -6,10 +6,6 @@ var RSVP = require('RSVP');
 var rimraf = require('rimraf');
 var mochaOnlyDetector = require('mocha-only-detector');
 
-if (process.env.EOLNEWLINE) {
-  require('os').EOL = '\n';
-}
-
 rimraf.sync('.node_modules-tmp');
 rimraf.sync('.bower_components-tmp');
 
