@@ -11,6 +11,7 @@ module.exports = {
       this.addPackageToProject('mocha', '^2.2.1'),
       this.addPackageToProject('mocha-only-detector', '0.0.2'),
       this.addPackageToProject('rimraf', '^2.4.3'),
+      this.addPackageToProject('rsvp','^3.0.17')
     ]);
   }
 };

@@ -2,7 +2,7 @@
 
 var glob = require('glob');
 var Mocha = require('mocha');
-var Promise = require('ember-cli/lib/ext/promise');
+var Promise = require('rsvp');
 var rimraf = require('rimraf');
 var mochaOnlyDetector = require('mocha-only-detector');
 
