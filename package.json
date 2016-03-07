@@ -29,6 +29,7 @@
     "exists-sync": "0.0.3",
     "findup": "^0.1.5",
     "fs-extra": "^0.24.0",
+    "rsvp": "^3.0.17",
     "tmp-sync": "^1.0.0",
     "walk-sync": "^0.2.5"
   },
