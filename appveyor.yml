@@ -1,0 +1,28 @@
+# Set build version format here instead of in the admin panel.
+version: "{build}"
+
+cache:
+  - '%APPDATA%\npm-cache'
+  - '%APPDATA%\Roaming\bower'
+
+# Test against this version of Node.js
+environment:
+  nodejs_version: "5"
+
+# Install scripts. (runs after repo cloning)
+install:
+  # Get the latest stable version of Node.js or io.js
+  - ps: Install-Product node $env:nodejs_version
+  # install modules
+  - npm install
+
+# Don't actually build.
+build: off
+
+# Post-install test scripts.
+test_script:
+  # Output useful info for debugging.
+  - node --version
+  - npm --version
+  # run tests
+  - npm test
