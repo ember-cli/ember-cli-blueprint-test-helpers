@@ -53,12 +53,12 @@ describe('blueprint-helper', function() {
   describe('getPackage', function() {
     it('gets the app package path', function() {
       var appPackage = getPackage('../../', 'app');
-      expect(appPackage).to.contain('/node-tests/fixtures/app/package');
+      expect(appPackage).to.contain(path.join('node-tests', 'fixtures', 'app', 'package'));
     });
 
     it('gets the addon package path', function() {
       var appPackage = getPackage('../../', 'addon');
-      expect(appPackage).to.contain('/node-tests/fixtures/addon/package');
+      expect(appPackage).to.contain(path.join('node-tests', 'fixtures', 'addon', 'package'));
     });
   });
 
