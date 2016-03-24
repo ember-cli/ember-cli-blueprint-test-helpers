@@ -76,36 +76,47 @@ The options should contain a files object, as well as any of the following optio
 
 * __target__ _(string)_: Defines the type of project to setup for the test. Recognized values: __'app'__, __'addon'__, __'inRepoAddon'__
 * __packages__ _(array)_: A list of packages that should be removed from or added to the `package.json` file after the project has been set up (only affects the test this option is set for). Example:
-  
+
   ```js
   packages: [
     { name: 'ember-cli-qunit', delete: true },
     { name: 'ember-cli-mocha', dev: true, version: '~1.0.2' }
   ]
   ```
-* __files__ _(array)_: Array of files to assert, represented by objects with `file`, `exists`, `contains`, or `doesNotContain` properties. 
-Example object: 
+* __files__ _(array)_: Array of files to assert, represented by objects with `file`, `exists`, `contains`, or `doesNotContain` properties.
+Example object:
 
   ```js
   files: [
     {
-      file: 'path-to-file.js', 
-      contains: ['file contents to compare'], 
-      doesNotContain: ['file contents that shouldn\'t be present'], 
+      file: 'path-to-file.js',
+      contains: ['file contents to compare'],
+      doesNotContain: ['file contents that shouldn\'t be present'],
       exists: true //default true
     }
   ]
   ```
-* __throws__ _(regexp / / or object)_: Expected error message or excerpt to assert. Optionally, can be an object containing a `message` and `type` property. The `type` is a string of the error name. Example RegExp: 
+* __throws__ _(string / / regexp / / or object)_: Expected error message or excerpt to assert. Optionally, can be an object containing a `message` and `type` property. The `type` is a string of the error name.
+Example String:
 
   ```js
-  /Expected error message text./
-  ``` 
-Example object: 
+  throws: 'Expected error message text.'
+  ```
+Example RegExp:
 
   ```js
-  {
-    message: /Expected message/, 
+  throws: /Expected error message text./
+  ```
+Example object:
+
+  ```js
+  throws: {
+    message: 'Expected message', 
+    type: 'SilentError'
+  }
+  // or
+  throws: {
+    message: /Expected message/,
     type: 'SilentError'
   }
   ```
@@ -157,7 +168,7 @@ You can also pass an object containing the message and error type.
 ```js
 it('adapter application cannot extend from --base-class=application', function() {
   return generateAndDestroy(['adapter', 'application', '--base-class=application'], {
-    throws: { 
+    throws: {
       message: /Adapters cannot extend from themself/,
       type: 'SilentError'
     }
