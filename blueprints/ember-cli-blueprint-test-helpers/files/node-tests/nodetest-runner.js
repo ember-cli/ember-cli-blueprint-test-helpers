@@ -2,7 +2,7 @@
 
 var glob = require('glob');
 var Mocha = require('mocha');
-var RSVP = require('RSVP');
+var RSVP = require('rsvp');
 var rimraf = require('rimraf');
 var mochaOnlyDetector = require('mocha-only-detector');
 
