@@ -12,7 +12,7 @@ describe('Acceptance: ember generate and destroy <%= blueprintName %>', function
     return generateAndDestroy(['<%= blueprintName %>', 'foo'], {
       // define files to assert, and their contents
       files: [
-        // { file: 'app/type/foo.js', contents: ['foo']}
+        // { file: 'app/type/foo.js', contains: ['foo']}
       ]
     });
   });
