@@ -29,7 +29,6 @@
     "exists-sync": "0.0.3",
     "findup": "^0.1.5",
     "fs-extra": "^0.26.7",
-    "glob": "5.0.13",
     "rsvp": "^3.0.17",
     "tmp-sync": "^1.0.0",
     "walk-sync": "^0.2.5"
@@ -38,6 +37,7 @@
     "ember-cli": "^2.3.0",
     "eslint": "^2.2.0",
     "eslint-plugin-chai-expect": "^1.0.0",
+    "glob": "5.0.13",
     "mocha": "^2.2.1",
     "mocha-only-detector": "^0.1.0",
     "rimraf": "^2.4.3"
