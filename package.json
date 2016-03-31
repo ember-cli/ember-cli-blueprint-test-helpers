@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint blueprints lib tests",
     "test": "npm run lint && npm run nodetest",
-    "nodetest": "node tests/runner.js"
+    "nodetest": "mocha tests --recursive"
   },
   "ember-addon": {
     "main": "index.js"
@@ -36,7 +36,6 @@
     "ember-cli": "^2.3.0",
     "eslint": "^2.2.0",
     "eslint-plugin-chai-expect": "^1.0.0",
-    "glob": "5.0.13",
     "mocha": "^2.4.5",
     "mocha-only-detector": "^0.1.0",
     "rimraf": "^2.4.3",
