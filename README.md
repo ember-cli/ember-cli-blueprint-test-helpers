@@ -220,3 +220,12 @@ it('blueprint test', function() {
   });
 });
 ```
+
+Used by
+-------
+
+- https://github.com/emberjs/ember.js
+- https://github.com/emberjs/data
+- https://github.com/ember-cli/ember-cli-legacy-blueprints
+- https://github.com/simplabs/ember-simple-auth
+- https://github.com/DockYard/ember-suave
