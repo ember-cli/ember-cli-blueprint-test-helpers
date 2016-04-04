@@ -1,227 +1,238 @@
+
 ember-cli-blueprint-test-helpers
-================================
+==============================================================================
 
 [![Build Status](https://travis-ci.org/ember-cli/ember-cli-blueprint-test-helpers.svg?branch=master)](https://travis-ci.org/ember-cli/ember-cli-blueprint-test-helpers)
 [![Build status](https://ci.appveyor.com/api/projects/status/github/ember-cli/ember-cli-blueprint-test-helpers?svg=true)](https://ci.appveyor.com/project/embercli/ember-cli-blueprint-test-helpers/branch/master)
 
+test helpers for [ember-cli](https://github.com/ember-cli/ember-cli) blueprints
 
-About
------
 
-ember-cli-blueprint-test-helpers contains several test helpers for testing blueprints.
+Installation
+------------------------------------------------------------------------------
+
+Install the helpers via npm:
+
+```
+npm install --save-dev ember-cli-blueprint-test-helpers
+```
+
+Run the following command to generate the test runner:
+
+```
+ember generate ember-cli-blueprint-test-helpers
+```
+
 
 Usage
------
+------------------------------------------------------------------------------
 
-Install ember-cli-blueprint-test-helpers
+### Running Tests
 
-Running Tests
--------------
+The blueprint tests can be run by:
 
-To run the blueprint tests, run `node node-tests/nodetest-runner.js`.
-For convenience and CI purposes you can add the following to your `package.json`:
+```
+node node-tests/nodetest-runner.js
+```
+
+For convenience you should add the following to your `package.json`:
+
 ```json
 "scripts": {
   "nodetest": "node node-tests/nodetest-runner.js"
 }
 ```
-Then you can use `npm run nodetest` to run.
 
-Generating Blueprint Tests
---------------------------
+to be able to use `npm run nodetest` to run the tests.
 
-Generate a blueprint test scaffold using the blueprint-test blueprint.
-`ember g blueprint-test my-blueprint`
 
-The blueprint test will be generated inside the node-tests/blueprint folder as:
+### Generating Tests
+
+Generate a blueprint test scaffold using the `blueprint-test` generator:
+
 ```
-  node-tests/blueprints/my-blueprint-test.js
+ember generate blueprint-test my-blueprint
 ```
-The minimum common setup is in the generated test, setup for generating and destroying a blueprint in one test.
 
-Test Setup
-----------
+which will generate a test file at `node-tests/blueprints/my-blueprint-test.js`.
 
-The `setupTestHooks` convenience method sets up a blueprint test with a timeout as well as before, after, beforeEach, and afterEach hooks:
+
+### Example Usage
 
 ```js
-describe('Acceptance: ember generate', function() {
-  // pass in test instance, and an optional options object.
-  setupTestHooks(this, {timeout: 1000});
-```
-
-If you need to override or add to any of the hooks, you may pass a function in the options.
-The options supported are:
-* __timeout__ _(number)_: Duration before test times out.
-* __tmpenv__ _(tmpenv object)_: Object containing info about the temporary directory for the test. Defaults to [`lib/helpers/tmp-env.js`](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/blob/master/lib/helpers/tmp-env.js)
-
-Generate and Destroy Test Helpers
----------------------------------
-
-Use `generate`, `destroy`, or `generateAndDestroy` to run a test.
-
-All three methods take the following signature:
-commandArgs (array), options (object)
-
-The commandArgs should contain any commandline properties and options that would be passed to a generate or destroy command.
-
-The options should contain a files object, as well as any of the following options:
-* __usePods__ _(boolean)_: Sets up `.ember-cli` file with `"usePods": true`. Default: false
-* __podModulePrefix__ _(boolean)_: Sets up `config/environment.js` with 'app/pods' as the `podModulePrefix`. Default: false
-* __skipInit__ _(boolean)_: Skips the temporary project init step for situations where the project has already been setup. Most commonly used when generating inside the `afterGenerate` hook.
-
-* __target__ _(string)_: Defines the type of project to setup for the test. Recognized values: __'app'__, __'addon'__, __'inRepoAddon'__
-* __packages__ _(array)_: A list of packages that should be removed from or added to the `package.json` file after the project has been set up (only affects the test this option is set for). Example:
-
-  ```js
-  packages: [
-    { name: 'ember-cli-qunit', delete: true },
-    { name: 'ember-cli-mocha', dev: true, version: '~1.0.2' }
-  ]
-  ```
-* __files__ _(array)_: Array of files to assert, represented by objects with `file`, `exists`, `contains`, or `doesNotContain` properties.
-Example object:
-
-  ```js
-  files: [
-    {
-      file: 'path-to-file.js',
-      contains: ['file contents to compare'],
-      doesNotContain: ['file contents that shouldn\'t be present'],
-      exists: true //default true
-    }
-  ]
-  ```
-* __throws__ _(string / / regexp / / or object)_: Expected error message or excerpt to assert. Optionally, can be an object containing a `message` and `type` property. The `type` is a string of the error name.
-Example String:
-
-  ```js
-  throws: 'Expected error message text.'
-  ```
-Example RegExp:
-
-  ```js
-  throws: /Expected error message text./
-  ```
-Example object:
-
-  ```js
-  throws: {
-    message: 'Expected message', 
-    type: 'SilentError'
-  }
-  // or
-  throws: {
-    message: /Expected message/,
-    type: 'SilentError'
-  }
-  ```
-* __beforeGenerate__ _(function)_: Hook to execute before generating blueprint. Can be used for additional setup and assertions.
-* __afterGenerate__ _(function)_: Hook to execute after generating blueprint. Can be used for additional setup and assertions.
-* __beforeDestroy__ _(function)_: Hook to execute before destroying blueprint. Can be used for additional setup and assertions.
-* __afterDestroy__ _(function)_: Hook to execute before destroying blueprint. Can be used for additional teardown and assertions.
-
-Example Tests
--------------
-
-The following is a basic test, asserting `my-blueprint` generated the files in the `files` array and that their content matches, and then that the blueprint was destroyed and that the files in the `files` array were properly removed.
-
-```js
-var setupTestHooks     = require('ember-cli-blueprint-test-helpers/lib/helpers/setup');
-var BlueprintHelpers   = require('ember-cli-blueprint-test-helpers/lib/helpers/blueprint-helper');
-var generateAndDestroy = BlueprintHelpers.generateAndDestroy;
-
-describe('Acceptance: ember generate and destroy blueprint', function() {
+describe('Acceptance: ember generate and destroy my-blueprint', function() {
+  // create and destroy temporary working directories
   setupTestHooks(this);
 
-  it('blueprint test', function() {
-    return generateAndDestroy(['my-blueprint', 'foo'], {
-      files: [
-        {
-          file: 'path/to/file.js',
-          contains: [
-            'file contents to match',
-            'more file contents\n'
-          ]
-        }
-      ]
-    });
-  });
-```
+  it('my-blueprint foo', function() {
+    var args = ['my-blueprint', 'foo'];
 
-To assert that an error is thrown when incorrect input is used, you can use the `throws` option. The throws option simply requires a regex of the full or partial error message.
+    // create a new Ember.js app in the working directory
+    return emberNew()
+      
+      // then generate and destroy the `my-blueprint` blueprint called `foo`
+      .then(() => emberGenerateDestroy(args, (file) => {
 
-```js
-it('adapter application cannot extend from --base-class=application', function() {
-  return generateAndDestroy(['adapter', 'application', '--base-class=application'], {
-    throws: /Adapters cannot extend from themself/
+        // and run some assertions in between
+        expect(file('path/to/file.js'))
+          .to.contain('file contents to match')
+          .to.contain('more file contents\n');
+      }));
+      
+     // magically done for you: assert that the generated files are destroyed again 
   });
 });
 ```
 
-You can also pass an object containing the message and error type.
+or more explicitly:
 
 ```js
-it('adapter application cannot extend from --base-class=application', function() {
-  return generateAndDestroy(['adapter', 'application', '--base-class=application'], {
-    throws: {
-      message: /Adapters cannot extend from themself/,
-      type: 'SilentError'
-    }
+describe('Acceptance: ember generate and destroy my-blueprint', function() {
+  // create and destroy temporary working directories
+  setupTestHooks(this);
+
+  it('my-blueprint foo', function() {
+    var args = ['my-blueprint', 'foo'];
+
+    // create a new Ember.js app in the working directory
+    return emberNew()
+      
+      // then generate the `my-blueprint` blueprint called `foo`
+      .then(() => emberGenerate(args))
+
+      // then assert that the files were generated correctly
+      .then(() => expect(file('path/to/file.js'))
+        .to.contain('file contents to match')
+        .to.contain('more file contents\n'))
+      
+      // then destroy the `my-blueprint` blueprint called `foo`
+      .then(() => emberDestroy(args))
+
+      // then assert that the files were destroyed correctly
+      .then(() => expect(file('path/to/file.js')).to.not.exist);
   });
 });
 ```
 
-To generate another blueprint beforehand, you can use the `afterGenerate` hook to do your actual assertions, like in the example below. Be sure to include the `skipInit` option inside the `afterGenerate` hook to prevent re-initializing the temporary project, which can lead to problems.
 
-```js
-it('adapter extends from application adapter if present', function() {
-  return generateAndDestroy(['adapter', 'application'], {
-    afterGenerate: function() {
-      return generateAndDestroy(['adapter', 'foo'], {
-        // prevents this second generateAndDestroy from running init
-        skipInit: true,
-        files: [
-          {
-            file:'app/adapters/foo.js',
-            contains: [
-              "import ApplicationAdapter from './application';"
-            ]
-          }
-        ]
-      });
-    }
-  });
-});
-```
+API Reference
+------------------------------------------------------------------------------
 
-To setup a test project with a `podModulePrefix` or `usePods` setting, use the following options:
+This project exports two major API endpoints for you to use:
 
-```js
-it('blueprint test', function() {
-  return generateAndDestroy(['my-blueprint', 'foo'], {
-    usePods: true,
-    podModulePrefix: true
-  });
-});
-```
+- `require('ember-cli-blueprint-test-helpers/chai')`
 
-To test generating into addons, in-repo-addons, and dummy projects, you can use the `target` option:
+  This endpoint exports the [Chai](http://chaijs.com/) assertion library
+  including the [chai-as-promised](https://github.com/domenic/chai-as-promised)
+  and [chai-files](https://github.com/Turbo87/chai-files) plugins
 
-```js
-it('blueprint test', function() {
-  return generateAndDestroy(['my-blueprint', 'foo'], {
-    // supported options are 'app', 'addon', and 'inRepoAddon'
-    target: 'addon'
-  });
-});
-```
+- `require('ember-cli-blueprint-test-helpers/helpers')`
+
+  This endpoint exports the functions mentioned in the following API reference
+
+---
+
+### `setupTestHooks(scope, options)`
+
+Prepare the test context for the blueprint tests.
+ 
+**Parameters:**
+
+- `{Object} scope` the test context (i.e. `this`)
+- `{Object} [options]` optional parameters
+- `{Number} [options.timeout=20000]` the test timeout in milliseconds 
+- `{Object} [options.tmpenv]` object containing info about the temporary directory for the test. 
+  Defaults to [`lib/helpers/tmp-env.js`](lib/helpers/tmp-env.js)
+
+**Returns:** `{Promise}`
+
+---
+
+### `emberNew(options)`
+
+Create a new Ember.js app or addon in the current working directory.
+
+**Parameters:**
+
+- `{Object} [options]` optional parameters
+- `{String} [options.target='app']` the type of project to create (`app`, `addon` or `in-repo-addon`)
+
+**Returns:** `{Promise}`
+
+---
+
+### `emberGenerate(args)`
+
+Run a blueprint generator.
+
+**Parameters:**
+
+- `{Array.<String>} args` arguments to pass to `ember generate` (e.g. `['my-blueprint', 'foo']`)
+
+**Returns:** `{Promise}`
+
+---
+
+### `emberDestroy(args)`
+
+Run a blueprint destructor.
+
+**Parameters:**
+
+- `{Array.<String>} args` arguments to pass to `ember destroy` (e.g. `['my-blueprint', 'foo']`)
+
+**Returns:** `{Promise}`
+
+---
+
+### `emberGenerateDestroy(args, assertionCallback)`
+
+Run a blueprint generator and the corresponding blueprint destructor while
+checking assertions in between.
+
+**Parameters:**
+
+- `{Array.<String>} args` arguments to pass to `ember generate` (e.g. `['my-blueprint', 'foo']`)
+- `{Function} assertionCallback` the callback function in which the assertions should happen
+
+**Returns:** `{Promise}`
+
+---
+
+### `modifyPackages(packages)`
+
+Modify the dependencies in the `package.json` file of the test project.
+
+**Parameters:**
+
+- `{Array.<Object>} packages` the list of packages that should be added,
+  changed or removed
+
+---
+
+### `setupPodConfig(options)`
+
+Setup `usePods` in `.ember-cli` and/or `podModulePrefix` in `environment.js`.
+
+**Parameters:**
+
+- `{Object} [options]` optional parameters
+- `{Boolean} [options.usePods]` add `usePods` in `.ember-cli`
+- `{Boolean} [options.podModulePrefix]` set `npodModulePrefix` to `app/pods`
+  in `config/environment.js`
+
 
 Used by
--------
+------------------------------------------------------------------------------
 
 - https://github.com/emberjs/ember.js
 - https://github.com/emberjs/data
 - https://github.com/ember-cli/ember-cli-legacy-blueprints
 - https://github.com/simplabs/ember-simple-auth
 - https://github.com/DockYard/ember-suave
+
+
+License
+------------------------------------------------------------------------------
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
