@@ -54,10 +54,6 @@ If you need to override or add to any of the hooks, you may pass a function in t
 The options supported are:
 * __timeout__ _(number)_: Duration before test times out.
 * __tmpenv__ _(tmpenv object)_: Object containing info about the temporary directory for the test. Defaults to [`lib/helpers/tmp-env.js`](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/blob/master/lib/helpers/tmp-env.js)
-* __before__ _(function)_: Hook to execute code at the beginning of the before function.
-* __after__ _(function)_: Hook to execute code at the beginning of the after function.
-* __beforeEach__ _(function)_: Hook to execute code at the beginning of the beforeEach function.
-* __afterEach__ _(function)_: Hook to execute code at the beginning of the afterEach function.
 
 Generate and Destroy Test Helpers
 ---------------------------------
