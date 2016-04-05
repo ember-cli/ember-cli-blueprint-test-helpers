@@ -23,6 +23,7 @@
   "dependencies": {
     "chai": "^3.3.0",
     "chai-as-promised": "^5.1.0",
+    "chai-files": "^1.0.0",
     "debug": "^2.2.0",
     "ember-cli-internal-test-helpers": "^0.8.1",
     "exists-sync": "0.0.3",
