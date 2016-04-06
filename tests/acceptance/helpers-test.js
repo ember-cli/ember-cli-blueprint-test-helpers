@@ -14,10 +14,10 @@ describe('Acceptance: helpers', function() {
     it('blueprint-test foo', function() {
       return emberNew()
         .then(() => emberGenerateDestroy(['blueprint-test', 'foo'], (file) => {
-            expect(file('node-tests/blueprints/foo-test.js'))
-              .to.contain('return emberNew()')
-              .to.contain('.then(() => emberGenerateDestroy(args, (file) => {');
-          }));
+          expect(file('node-tests/blueprints/foo-test.js'))
+            .to.contain('return emberNew()')
+            .to.contain('.then(() => emberGenerateDestroy(args, (file) => {');
+        }));
     });
   });
 });
