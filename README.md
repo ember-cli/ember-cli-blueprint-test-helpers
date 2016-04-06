@@ -32,14 +32,14 @@ Usage
 The blueprint tests can be run by:
 
 ```
-node node-tests/nodetest-runner.js
+node_modules/.bin/mocha node-tests --recursive
 ```
 
 For convenience you should add the following to your `package.json`:
 
 ```json
 "scripts": {
-  "nodetest": "node node-tests/nodetest-runner.js"
+  "nodetest": "mocha node-tests --recursive"
 }
 ```
 
