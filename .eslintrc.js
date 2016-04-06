@@ -10,6 +10,9 @@ module.exports = {
   },
   globals: {
   },
+  parserOptions: {
+    ecmaVersion: 6,
+  },
   rules: {
     'indent': [2, 2, {
       'SwitchCase': 0,
