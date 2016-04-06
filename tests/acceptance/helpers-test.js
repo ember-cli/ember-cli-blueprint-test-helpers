@@ -6,7 +6,6 @@ var emberGenerateDestroy = blueprintHelpers.emberGenerateDestroy;
 
 var chai = require('../../chai');
 var expect = chai.expect;
-var file = chai.file;
 
 describe('Acceptance: helpers', function() {
   setupTestHooks(this);
