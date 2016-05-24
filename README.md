@@ -23,6 +23,10 @@ Run the following command to generate the test runner:
 ember generate ember-cli-blueprint-test-helpers
 ```
 
+If you are using `ember-cli-blueprint-test-helpers` on Node v4.x or lower, you'll want to use the `-babel` option, to add ES6 support.
+```
+ember generate ember-cli-blueprint-test-helpers -babel
+```
 
 Usage
 ------------------------------------------------------------------------------
@@ -69,7 +73,7 @@ describe('Acceptance: ember generate and destroy my-blueprint', function() {
 
     // create a new Ember.js app in the working directory
     return emberNew()
-      
+
       // then generate and destroy the `my-blueprint` blueprint called `foo`
       .then(() => emberGenerateDestroy(args, (file) => {
 
@@ -78,8 +82,8 @@ describe('Acceptance: ember generate and destroy my-blueprint', function() {
           .to.contain('file contents to match')
           .to.contain('more file contents\n');
       }));
-      
-     // magically done for you: assert that the generated files are destroyed again 
+
+     // magically done for you: assert that the generated files are destroyed again
   });
 });
 ```
@@ -96,7 +100,7 @@ describe('Acceptance: ember generate and destroy my-blueprint', function() {
 
     // create a new Ember.js app in the working directory
     return emberNew()
-      
+
       // then generate the `my-blueprint` blueprint called `foo`
       .then(() => emberGenerate(args))
 
@@ -104,7 +108,7 @@ describe('Acceptance: ember generate and destroy my-blueprint', function() {
       .then(() => expect(file('path/to/file.js'))
         .to.contain('file contents to match')
         .to.contain('more file contents\n'))
-      
+
       // then destroy the `my-blueprint` blueprint called `foo`
       .then(() => emberDestroy(args))
 
@@ -113,7 +117,6 @@ describe('Acceptance: ember generate and destroy my-blueprint', function() {
   });
 });
 ```
-
 
 API Reference
 ------------------------------------------------------------------------------
@@ -135,13 +138,13 @@ This project exports two major API endpoints for you to use:
 ### `setupTestHooks(scope, options)`
 
 Prepare the test context for the blueprint tests.
- 
+
 **Parameters:**
 
 - `{Object} scope` the test context (i.e. `this`)
 - `{Object} [options]` optional parameters
-- `{Number} [options.timeout=20000]` the test timeout in milliseconds 
-- `{Object} [options.tmpenv]` object containing info about the temporary directory for the test. 
+- `{Number} [options.timeout=20000]` the test timeout in milliseconds
+- `{Object} [options.tmpenv]` object containing info about the temporary directory for the test.
   Defaults to [`lib/helpers/tmp-env.js`](lib/helpers/tmp-env.js)
 
 **Returns:** `{Promise}`

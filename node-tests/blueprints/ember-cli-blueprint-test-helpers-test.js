@@ -24,7 +24,7 @@ describe('Acceptance: ember generate and destroy ember-cli-blueprint-test-helper
         expect(file('.npmignore')).to.contain('node-tests/');
     }));
   });
-  it('ember-cli-blueprint-test-helpers', function() {
+  it('ember-cli-blueprint-test-helpers -babel', function() {
     var args = ['ember-cli-blueprint-test-helpers', '-babel'];
 
     // pass any additional command line options in the arguments array
