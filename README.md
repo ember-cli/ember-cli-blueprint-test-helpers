@@ -28,6 +28,8 @@ If you are using `ember-cli-blueprint-test-helpers` on Node v4.x or lower, you'l
 ember generate ember-cli-blueprint-test-helpers -babel
 ```
 
+It should be noted that `ember-cli-blueprint-test-helpers` currently [only works for testing blueprints inside addon projects](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/issues/56).
+
 Usage
 ------------------------------------------------------------------------------
 
