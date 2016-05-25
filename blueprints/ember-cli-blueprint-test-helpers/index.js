@@ -20,8 +20,7 @@ module.exports = {
       this.insertIntoFile('./.npmignore', 'node-tests/')
     ];
     var packages = [{name: 'mocha', target: '^2.2.1'}];
-    // write the test call to the package.json
-    this.insertTestCallToPackage(options);
+    this.insertTestCallToPackage(options)
 
     if (options.babel) {
       afterInstallTasks.push(this.insertIntoJsonFile('./node-tests/.babelrc',{plugins: ["transform-es2015-arrow-functions", "transform-es2015-shorthand-properties"]}));
@@ -41,21 +40,10 @@ module.exports = {
       originalContents = JSON.parse(fs.readFileSync(fullPath, { encoding: 'utf8' }));
     }
     contentsToWrite = JSON.stringify(merge(originalContents, contents), null, 2);
-    var returnValue = {
-      path: fullPath,
-      originalContents: originalContents,
-      contents: contentsToWrite,
-      inserted: false
-    };
     if (contentsToWrite !== originalContents) {
-      returnValue.inserted = true;
-
-      return writeFile(fullPath, contentsToWrite)
-        .then(function() {
-          return returnValue;
-        });
+      return writeFile(fullPath, contentsToWrite);
     } else {
-      return Promise.resolve(returnValue);
+      return Promise.resolve();
     }
   },
   insertTestCallToPackage: function(options) {
