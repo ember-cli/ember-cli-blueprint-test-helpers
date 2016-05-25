@@ -23,9 +23,9 @@ Run the following command to generate the test runner:
 ember generate ember-cli-blueprint-test-helpers
 ```
 
-If you are using `ember-cli-blueprint-test-helpers` on Node v4.x or lower, you'll want to use the `-babel` option, to add ES6 support.
+If you are using `ember-cli-blueprint-test-helpers` on Node v4.x or lower, you'll want to use the `--babel` option, to add ES6 support.
 ```
-ember generate ember-cli-blueprint-test-helpers -babel
+ember generate ember-cli-blueprint-test-helpers --babel
 ```
 
 It should be noted that `ember-cli-blueprint-test-helpers` currently [only works for testing blueprints inside addon projects](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/issues/56).

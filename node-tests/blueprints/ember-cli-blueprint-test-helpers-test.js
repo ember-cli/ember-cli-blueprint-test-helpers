@@ -6,10 +6,12 @@ var emberNew = blueprintHelpers.emberNew;
 var emberGenerateDestroy = blueprintHelpers.emberGenerateDestroy;
 var emberGenerate = blueprintHelpers.emberGenerate;
 
+var fs = require('fs-extra');
+var path = require('path');
 var expect = require('../../chai').expect;
 var file = require('../../chai').file;
 
-describe('Acceptance: ember generate and destroy ember-cli-blueprint-test-helpers', function() {
+describe('Acceptance: ember generate ember-cli-blueprint-test-helpers', function() {
   setupTestHooks(this);
 
   it('ember-cli-blueprint-test-helpers', function() {
@@ -25,7 +27,7 @@ describe('Acceptance: ember generate and destroy ember-cli-blueprint-test-helper
     }));
   });
   it('ember-cli-blueprint-test-helpers -babel', function() {
-    var args = ['ember-cli-blueprint-test-helpers', '-babel'];
+    var args = ['ember-cli-blueprint-test-helpers', '--babel'];
 
     // pass any additional command line options in the arguments array
     return emberNew()
@@ -41,8 +43,28 @@ describe('Acceptance: ember generate and destroy ember-cli-blueprint-test-helper
           .to.contain('"plugins": [')
           .to.contain('"transform-es2015-arrow-functions",')
           .to.contain('"transform-es2015-shorthand-properties"')
-        expect(file('node-tests/mocha.opts'))
-          .to.contain('--require babel-register\n--recursive');
+        expect(file('package.json'))
+          .to.contain('--recursive --require babel-register');
+    }));
+  });
+  it('doesn\'t write to existing nodetest scripts', function() {
+    var args = ['ember-cli-blueprint-test-helpers', '--babel'];
+
+    // pass any additional command line options in the arguments array
+    return emberNew()
+      .then(() => {
+        // modify package
+        let packagePath = path.resolve(process.cwd(), 'package.json');
+        let pkg = fs.readJsonSync(packagePath);
+        pkg.scripts.nodetest = 'mocha tests';
+        fs.writeJsonSync(packagePath, pkg, {spaces:2});
+        return;
+      })
+      .then(() => emberGenerate(args)
+      .then((result) => {
+        let output = result.outputStream.join('');
+        expect(output).to.contain('Could not update "nodetest" script in package.json. Please add "mocha node-tests --recursive --require babel-register" to your nodetest script.');
+        expect(file('package.json')).to.contain('mocha tests');
     }));
   });
 });
