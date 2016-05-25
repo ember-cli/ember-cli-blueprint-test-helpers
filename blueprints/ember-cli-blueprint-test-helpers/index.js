@@ -17,10 +17,11 @@ module.exports = {
   normalizeEntityName: function(){},
   afterInstall: function(options) {
     var afterInstallTasks = [
-      this.insertIntoFile('./.npmignore', 'node-tests/'),
-      this.insertTestCallToPackage(options)
+      this.insertIntoFile('./.npmignore', 'node-tests/')
     ];
     var packages = [{name: 'mocha', target: '^2.2.1'}];
+    // write the test call to the package.json
+    this.insertTestCallToPackage(options);
 
     if (options.babel) {
       afterInstallTasks.push(this.insertIntoJsonFile('./node-tests/.babelrc',{plugins: ["transform-es2015-arrow-functions", "transform-es2015-shorthand-properties"]}));
@@ -58,37 +59,26 @@ module.exports = {
     }
   },
   insertTestCallToPackage: function(options) {
-    var contentsToWrite;
+    var insert = false;
     var fullPath = path.join(this.project.root, 'package.json');
     var scriptContents = 'mocha node-tests --recursive';
     var babelContents = ' --require babel-register';
-    var originalContents = fs.readJsonSync(fullPath, { throws: false });
-    if (originalContents.scripts.nodetest === scriptContents) {
+    var packageContents = fs.readJsonSync(fullPath, { throws: false });
+    if (packageContents.scripts.nodetest === scriptContents) {
       if (options.babel) {
-        originalContents.scripts.nodetest += babelContents;
+        packageContents.scripts.nodetest += babelContents;
+        insert = true;
       }
-    } else if (typeof originalContents.scripts.nodetest === 'undefined') {
-      originalContents.scripts.nodetest = scriptContents + (options.babel ? babelContents : '');
+    } else if (typeof packageContents.scripts.nodetest === 'undefined') {
+      packageContents.scripts.nodetest = scriptContents + (options.babel ? babelContents : '');
+      insert = true;
     } else {
       this.ui.writeLine('Could not update "nodetest" script in package.json. Please add "' + scriptContents +
         (options.babel ? babelContents : '') + '" to your nodetest script.');
     }
-    contentsToWrite = JSON.stringify(originalContents, null, 2);
-    var returnValue = {
-      path: fullPath,
-      originalContents: originalContents,
-      contents: contentsToWrite,
-      inserted: false
-    };
-    if (contentsToWrite !== originalContents) {
-      returnValue.inserted = true;
 
-      return writeFile(fullPath, contentsToWrite)
-        .then(function() {
-          return returnValue;
-        });
-    } else {
-      return Promise.resolve(returnValue);
+    if (insert) {
+      fs.writeJsonSync(fullPath, packageContents, {spaces:2});
     }
   }
 };
