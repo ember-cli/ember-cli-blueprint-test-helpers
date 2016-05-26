@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "mocha tests/lint-test",
-    "test": "mocha tests --recursive"
+    "test": "mocha tests node-tests --recursive"
   },
   "ember-addon": {
     "main": "index.js"
@@ -29,6 +29,7 @@
     "exists-sync": "0.0.3",
     "findup": "^0.1.5",
     "fs-extra": "^0.26.7",
+    "lodash.merge": "^4.4.0",
     "tmp-sync": "^1.0.0",
     "walk-sync": "^0.2.5"
   },
