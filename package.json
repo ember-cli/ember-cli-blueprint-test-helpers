@@ -30,6 +30,7 @@
     "findup": "^0.1.5",
     "fs-extra": "^0.26.7",
     "lodash.merge": "^4.4.0",
+    "rsvp": "^3.0.17",
     "tmp-sync": "^1.0.0",
     "walk-sync": "^0.2.5"
   },
@@ -40,7 +41,6 @@
     "mocha": "^2.4.5",
     "mocha-eslint": "^2.0.2",
     "mocha-only-detector": "^0.1.0",
-    "rimraf": "^2.4.3",
-    "rsvp": "^3.0.17"
+    "rimraf": "^2.4.3"
   }
 }
