@@ -1,9 +1,11 @@
-var Promise = require('ember-cli/lib/ext/promise');
+var RSVP = require('rsvp');
 var existsSync = require('exists-sync');
 var fs = require('fs-extra');
 var path = require('path');
 var merge = require('lodash.merge');
-var writeFile = Promise.denodeify(fs.outputFile);
+
+var Promise = RSVP.Promise;
+var writeFile = RSVP.denodeify(fs.outputFile);
 
 module.exports = {
   description: 'Installs dependencies for ember-cli-blueprint-test-helpers',
