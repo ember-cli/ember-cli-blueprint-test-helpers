@@ -16,7 +16,8 @@ describe('Acceptance: ember generate and destroy blueprint-test', function() {
     // pass any additional command line options in the arguments array
     return emberNew()
       .then(() => emberGenerateDestroy(args, file => {
-        expect(file('node-tests/blueprints/foo-test.js')).to.contain('describe(\'Acceptance: ember generate and destroy foo\', function() {');
-    }));
+        expect(file('node-tests/blueprints/foo-test.js'))
+          .to.contain('describe(\'Acceptance: ember generate and destroy foo\', function() {');
+      }));
   });
 });
