@@ -7,6 +7,7 @@ var emberGenerate = blueprintHelpers.emberGenerate;
 
 var fs = require('fs-extra');
 var path = require('path');
+var stripAnsi = require('strip-ansi');
 var expect = require('../../chai').expect;
 var file = require('../../chai').file;
 
@@ -21,7 +22,8 @@ describe('Acceptance: ember generate ember-cli-blueprint-test-helpers', function
       .then(() => emberGenerate(args))
       .then((result) => {
         // test ui output because we can't test for actual npm install modifying package.json
-        expect(result.outputStream.join(' ')).to.contain('install package\u001b[39m mocha');
+        expect(stripAnsi(result.outputStream.join(' ')))
+          .to.contain('install package mocha');
         expect(file('.npmignore')).to.contain('node-tests/');
       });
   });
