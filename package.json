@@ -31,8 +31,7 @@
     "fs-extra": "^0.30.0",
     "lodash.merge": "^4.4.0",
     "rsvp": "^3.0.17",
-    "tmp-sync": "^1.0.0",
-    "walk-sync": "^0.3.0"
+    "tmp-sync": "^1.0.0"
   },
   "devDependencies": {
     "ember-cli": "^2.3.0",
