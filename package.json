@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "lint": "mocha tests/lint-test",
-    "test": "mocha tests node-tests --recursive"
+    "test": "npm run lint && mocha tests node-tests --recursive",
+    "preversion": "npm test",
+    "postversion": "git push origin master --follow-tags && npm publish"
   },
   "ember-addon": {
     "main": "index.js"
