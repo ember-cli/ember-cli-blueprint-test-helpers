@@ -3,3 +3,12 @@ language: node_js
 node_js:
   - '6'
   - '4'
+
+deploy:
+  provider: npm
+  email: stefan.penner+ember-cli@gmail.com
+  api_key:
+    secure: SmaSnFq3tDMUiVoZcYwWM9DkkrdyYEb69oJ3JlKFe0iqvJPF62X2JsRAwTfuMDJ7MoYPdU4sHjFMmq0nUJuoePzgEpJQdb1cqiJrBuXO/PDTj4fA0UzCSU2DMSYilEQxwZIkw4pY/JPmlOm4A2SlHgzwaEhXsnK55KAVPiBtXlaA4+F1M1vHzYc6cAEwDswLzWU4SUHWqAT6hW+/BxaUXqw02VrIpwN8ANfl/7IPVRDc2hBsHR0GaXAT77f6lWlwpNXIJ9oxjBpaNlpOXgyvpBbHzpzFWG0+VgT9qr+O2r8q6ROlBk56cEqCgAAY+JjqWj6RVc8FxQxjKGM6POE59nfM/b20D2sEPADE+3W5Gyoc/z2Is0NTo7xX2XtyN9p0w/HN36T/12iUro0jGf2DaTg/CjIU/GlPkUSs2Serr2Fyl+lp/LuFPQry3QT6H3RNrzu+YuHWF6tcim+nX2uzERz+3c8bUHEAIAy3XNU3mxeZB3UDUF2LN6pQqJOIGRIBogQK1EYNXygCWgf73qzDl1egPMsBTsD8Iya60fvdwWJVw1RyV/tZlp2OjyzOvGriP2nvnGmFxmTMci4dOE1Q11Tg04lgLzIfA4E2kkcvayAG8StN080iDCzo6M+urBBJbT0gFNlGEBl9Cm/uSxOQ+jnDMeI+q2YOeITxmTiQDhs=
+  on:
+    tags: true
+    repo: ember-cli/ember-cli-blueprint-test-helpers
