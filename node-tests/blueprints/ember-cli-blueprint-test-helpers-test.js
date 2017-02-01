@@ -27,29 +27,9 @@ describe('Acceptance: ember generate ember-cli-blueprint-test-helpers', function
         expect(file('.npmignore')).to.contain('node-tests/');
       });
   });
-  it('ember-cli-blueprint-test-helpers -babel', function() {
-    var args = ['ember-cli-blueprint-test-helpers', '--babel'];
 
-    // pass any additional command line options in the arguments array
-    return emberNew()
-      .then(() => emberGenerate(args))
-      .then((result) => {
-        let output = result.outputStream.join('');
-        // test ui output because we can't test for actual npm install modifying package.json
-        expect(output).to.contain('babel-register');
-        expect(output).to.contain('babel-plugin-transform-es2015-arrow-functions');
-        expect(output).to.contain('babel-plugin-transform-es2015-shorthand-properties');
-
-        expect(file('node-tests/.babelrc'))
-          .to.contain('"plugins": [')
-          .to.contain('"transform-es2015-arrow-functions",')
-          .to.contain('"transform-es2015-shorthand-properties"');
-        expect(file('package.json'))
-          .to.contain('--recursive --require babel-register');
-      });
-  });
   it('doesn\'t write to existing nodetest scripts', function() {
-    var args = ['ember-cli-blueprint-test-helpers', '--babel'];
+    var args = ['ember-cli-blueprint-test-helpers'];
 
     // pass any additional command line options in the arguments array
     return emberNew()
@@ -63,7 +43,7 @@ describe('Acceptance: ember generate ember-cli-blueprint-test-helpers', function
       .then(() => emberGenerate(args))
       .then((result) => {
         let output = result.outputStream.join('');
-        expect(output).to.contain('Could not update "nodetest" script in package.json. Please add "mocha node-tests --recursive --require babel-register" to your nodetest script.');
+        expect(output).to.contain('Could not update "nodetest" script in package.json. Please add "mocha node-tests --recursive" to your nodetest script.');
         expect(file('package.json')).to.contain('mocha tests');
       });
   });
