@@ -27,7 +27,7 @@
     "chai-as-promised": "^6.0.0",
     "chai-files": "^1.0.0",
     "debug": "^2.2.0",
-    "ember-cli-internal-test-helpers": "^0.8.1",
+    "ember-cli-internal-test-helpers": "^0.9.1",
     "exists-sync": "0.0.3",
     "findup": "^0.1.5",
     "fs-extra": "^0.30.0",
