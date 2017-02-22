@@ -136,6 +136,7 @@ Prepare the test context for the blueprint tests.
 - `{Number} [options.timeout=20000]` the test timeout in milliseconds
 - `{Object} [options.tmpenv]` object containing info about the temporary directory for the test.
 - `{String} [options.cliPath='ember-cli']` path to the `ember-cli` dependency
+- `{Boolean} [options.disableMocking=false]` turn on the real npm (and bower) to test package installs
   Defaults to [`lib/helpers/tmp-env.js`](lib/helpers/tmp-env.js)
 
 **Returns:** `{Promise}`
