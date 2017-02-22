@@ -7,7 +7,7 @@
     "lint": "mocha tests/lint-test",
     "test": "npm run lint && mocha tests node-tests --recursive",
     "preversion": "npm test",
-    "postversion": "git push origin master --follow-tags && npm publish"
+    "postversion": "git push origin master --follow-tags"
   },
   "ember-addon": {
     "main": "index.js"
