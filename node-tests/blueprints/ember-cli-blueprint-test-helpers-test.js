@@ -55,7 +55,7 @@ describe('Acceptance: ember generate ember-cli-blueprint-test-helpers', function
 
   describe('with mocking', function() {
     setupTestHooks(this, {
-      disableMocking: true,
+      disabledTasks: [],
       timeout: 300000
     });
 
