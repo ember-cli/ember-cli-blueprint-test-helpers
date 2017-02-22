@@ -6,7 +6,6 @@ var emberNew = blueprintHelpers.emberNew;
 var emberGenerate = blueprintHelpers.emberGenerate;
 
 var fs = require('fs-extra');
-var path = require('path');
 var stripAnsi = require('strip-ansi');
 var expect = require('../../chai').expect;
 var file = require('../../chai').file;
@@ -35,10 +34,9 @@ describe('Acceptance: ember generate ember-cli-blueprint-test-helpers', function
     return emberNew()
       .then(() => {
         // modify package
-        let packagePath = path.resolve(process.cwd(), 'package.json');
-        let pkg = fs.readJsonSync(packagePath);
+        let pkg = fs.readJsonSync('package.json');
         pkg.scripts.nodetest = 'mocha tests';
-        fs.writeJsonSync(packagePath, pkg, {spaces:2});
+        fs.writeJsonSync('package.json', pkg, {spaces:2});
       })
       .then(() => emberGenerate(args))
       .then((result) => {
