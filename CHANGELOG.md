@@ -2,10 +2,46 @@
 
 ## [Unreleased](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/HEAD)
 
-[Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.13.0...HEAD)
+[Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.15.0...HEAD)
 
 **Merged pull requests:**
 
+- add npm badge [\#90](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/90) ([kellyselden](https://github.com/kellyselden))
+
+## [v0.15.0](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/v0.15.0) (2017-02-22)
+[Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.14.0...v0.15.0)
+
+**Merged pull requests:**
+
+- use the new MockBlueprintTaskFor api [\#89](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/89) ([kellyselden](https://github.com/kellyselden))
+- simplify package lookup [\#88](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/88) ([kellyselden](https://github.com/kellyselden))
+- add disableMocking option [\#87](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/87) ([kellyselden](https://github.com/kellyselden))
+- Update ember-cli-internal-test-helpers to the latest version 🚀 [\#86](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/86) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Remove obsolete --babel option [\#85](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/85) ([Turbo87](https://github.com/Turbo87))
+- CI: Enable automatic NPM deployment for tags [\#84](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/84) ([Turbo87](https://github.com/Turbo87))
+- Update dependencies to enable Greenkeeper 🌴 [\#79](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/79) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+
+## [v0.14.0](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/v0.14.0) (2016-11-23)
+[Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.13.2...v0.14.0)
+
+## [v0.13.2](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/v0.13.2) (2016-11-23)
+[Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.13.1...v0.13.2)
+
+## [v0.13.1](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/v0.13.1) (2016-11-22)
+[Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.13.0...v0.13.1)
+
+**Closed issues:**
+
+- Remove "walk-sync" dependency [\#72](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/issues/72)
+
+**Merged pull requests:**
+
+- Make npm do all the work. [\#82](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/82) ([nathanhammond](https://github.com/nathanhammond))
+- Remove outdated helper. [\#81](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/81) ([nathanhammond](https://github.com/nathanhammond))
+- CI: Update NodeJS targets [\#80](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/80) ([Turbo87](https://github.com/Turbo87))
+- Update chai-as-promised to version 6.0.0 🚀 [\#78](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/78) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Remove expensive debug output calls [\#77](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/77) ([Turbo87](https://github.com/Turbo87))
+- Add CHANGELOG file [\#75](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/75) ([Turbo87](https://github.com/Turbo87))
 - Update mocha to version 3.0.0 🚀 [\#73](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/73) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
 - Update walk-sync to version 0.3.0 🚀 [\#71](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/71) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
 - Update eslint to version 3.1.1 🚀 [\#70](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/70) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
