@@ -16,7 +16,7 @@ function getDevDependencies() {
 }
 
 describe('Acceptance: ember generate ember-cli-blueprint-test-helpers', function() {
-  describe('without mocking', function() {
+  describe('with mocking', function() {
     setupTestHooks(this);
 
     it('ember-cli-blueprint-test-helpers', function() {
@@ -53,7 +53,7 @@ describe('Acceptance: ember generate ember-cli-blueprint-test-helpers', function
     });
   });
 
-  describe('with mocking', function() {
+  describe('without mocking', function() {
     setupTestHooks(this, {
       disabledTasks: [],
       timeout: 300000
