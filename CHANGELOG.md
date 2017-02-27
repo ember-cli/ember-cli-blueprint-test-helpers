@@ -1,11 +1,22 @@
 # Change Log
 
-## [Unreleased](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/HEAD)
-
-[Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.15.0...HEAD)
+## [v0.17.0](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/v0.17.0) (2017-02-27)
+[Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.16.0...v0.17.0)
 
 **Merged pull requests:**
 
+- add 'addon-install' to disabled tasks [\#97](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/97) ([kellyselden](https://github.com/kellyselden))
+- simplify options [\#96](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/96) ([kellyselden](https://github.com/kellyselden))
+
+## [v0.16.0](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/v0.16.0) (2017-02-24)
+[Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.15.0...v0.16.0)
+
+**Merged pull requests:**
+
+- invert the mocking text [\#94](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/94) ([kellyselden](https://github.com/kellyselden))
+- mock bower install as well as npm [\#93](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/93) ([kellyselden](https://github.com/kellyselden))
+- Update CHANGELOG [\#92](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/92) ([Turbo87](https://github.com/Turbo87))
+- travis does publish now [\#91](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/91) ([kellyselden](https://github.com/kellyselden))
 - add npm badge [\#90](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/90) ([kellyselden](https://github.com/kellyselden))
 
 ## [v0.15.0](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/v0.15.0) (2017-02-22)
