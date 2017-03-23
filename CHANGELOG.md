@@ -1,5 +1,21 @@
 # Change Log
 
+## [v0.17.1](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/v0.17.1) (2017-03-23)
+[Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.17.0...v0.17.1)
+
+**Closed issues:**
+
+- An in-range update of rsvp is breaking the build 🚨 [\#102](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/issues/102)
+- An in-range update of fs-extra is breaking the build 🚨 [\#101](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/issues/101)
+- An in-range update of ember-cli is breaking the build 🚨 [\#100](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/issues/100)
+- update changelog [\#95](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/issues/95)
+
+**Merged pull requests:**
+
+- Make setupPodConfig helper agnostic of variable declaration type [\#104](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/104) ([simonihmig](https://github.com/simonihmig))
+- CI: Install npm@3 if necessary [\#103](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/103) ([Turbo87](https://github.com/Turbo87))
+- Update fs-extra to the latest version 🚀 [\#99](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/99) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+
 ## [v0.17.0](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/v0.17.0) (2017-02-27)
 [Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.16.0...v0.17.0)
 
