@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.17.2](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/v0.17.2) (2017-04-06)
+[Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.17.1...v0.17.2)
+
+**Merged pull requests:**
+
+- Cleanup symlinked addon after tests [\#98](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/98) ([simonihmig](https://github.com/simonihmig))
+
 ## [v0.17.1](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/v0.17.1) (2017-03-23)
 [Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.17.0...v0.17.1)
 
