@@ -7,3 +7,4 @@ chai.use(chaiFiles);
 
 module.exports = chai;
 module.exports.file = chaiFiles.file;
+module.exports.dir = chaiFiles.dir;
