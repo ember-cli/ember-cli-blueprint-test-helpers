@@ -1,8 +1,5 @@
-var RSVP = require('rsvp');
 var fs = require('fs-extra');
 var path = require('path');
-
-var Promise = RSVP.Promise;
 
 module.exports = {
   description: 'Installs dependencies for ember-cli-blueprint-test-helpers',
