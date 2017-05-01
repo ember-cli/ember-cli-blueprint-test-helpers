@@ -1,17 +1,17 @@
 'use strict';
 
-var blueprintHelpers = require('ember-cli-blueprint-test-helpers/helpers');
-var setupTestHooks = blueprintHelpers.setupTestHooks;
-var emberNew = blueprintHelpers.emberNew;
-var emberGenerateDestroy = blueprintHelpers.emberGenerateDestroy;
+const blueprintHelpers = require('ember-cli-blueprint-test-helpers/helpers');
+const setupTestHooks = blueprintHelpers.setupTestHooks;
+const emberNew = blueprintHelpers.emberNew;
+const emberGenerateDestroy = blueprintHelpers.emberGenerateDestroy;
 
-var expect = require('ember-cli-blueprint-test-helpers/chai').expect;
+const expect = require('ember-cli-blueprint-test-helpers/chai').expect;
 
 describe('Acceptance: ember generate and destroy <%= blueprintName %>', function() {
   setupTestHooks(this);
 
   it('<%= blueprintName %> foo', function() {
-    var args = ['<%= blueprintName %>', 'foo'];
+    let args = ['<%= blueprintName %>', 'foo'];
 
     // pass any additional command line options in the arguments array
     return emberNew()
