@@ -21,7 +21,7 @@
   "author": "Jake Bixby",
   "license": "MIT",
   "dependencies": {
-    "chai": "^3.3.0",
+    "chai": "^4.0.2",
     "chai-as-promised": "^7.0.0",
     "chai-files": "^1.0.0",
     "debug": "^2.2.0",
