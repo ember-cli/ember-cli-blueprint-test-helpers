@@ -22,22 +22,22 @@
   "license": "MIT",
   "dependencies": {
     "chai": "^4.0.2",
-    "chai-as-promised": "^6.0.0",
+    "chai-as-promised": "^7.0.0",
     "chai-files": "^1.0.0",
     "debug": "^2.2.0",
     "ember-cli-internal-test-helpers": "^0.9.1",
     "exists-sync": "0.0.3",
     "findup": "^0.1.5",
-    "fs-extra": "^3.0.0",
+    "fs-extra": "^4.0.0",
     "lodash.merge": "^4.4.0",
     "tmp-sync": "^1.0.0"
   },
   "devDependencies": {
     "ember-cli": "^2.3.0",
-    "eslint": "^3.1.1",
+    "eslint": "^4.1.0",
     "eslint-plugin-chai-expect": "^1.0.0",
     "mocha": "^3.0.0",
-    "mocha-eslint": "^3.0.1",
+    "mocha-eslint": "^4.0.0",
     "mocha-only-detector": "^0.1.0",
     "rimraf": "^2.4.3",
     "strip-ansi": "^3.0.1"
