@@ -1,5 +1,32 @@
 # Change Log
 
+## [v0.18.0](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/v0.18.0) (2017-10-03)
+[Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.17.2...v0.18.0)
+
+**Implemented enhancements:**
+
+- CI: Use "auto-dist-tag" for deployment [\#110](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/110) ([Turbo87](https://github.com/Turbo87))
+
+**Closed issues:**
+
+- emberNew inside scoped npm package [\#119](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/issues/119)
+- Remove tmp-sync from dependencies [\#105](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/issues/105)
+
+**Merged pull requests:**
+
+- Support scoped packages [\#121](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/121) ([christophercurrie](https://github.com/christophercurrie))
+- Update debug to the latest version 🚀 [\#118](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/118) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- fix\(package\): update chai to version 4.1.0 [\#117](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/117) ([Turbo87](https://github.com/Turbo87))
+- Update fs-extra to the latest version 🚀 [\#116](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/116) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update mocha-eslint to the latest version 🚀 [\#115](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/115) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update eslint to the latest version 🚀 [\#114](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/114) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update strip-ansi to the latest version 🚀 [\#113](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/113) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update chai-as-promised to the latest version 🚀 [\#112](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/112) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- use node 4 keywords [\#109](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/109) ([kellyselden](https://github.com/kellyselden))
+- Replace RSVP dependency with native Promises [\#108](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/108) ([Turbo87](https://github.com/Turbo87))
+- package.json: Remove obsolete pre/postversion scripts [\#107](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/107) ([Turbo87](https://github.com/Turbo87))
+- Update fs-extra to the latest version 🚀 [\#106](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/106) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+
 ## [v0.17.2](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/v0.17.2) (2017-04-06)
 [Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.17.1...v0.17.2)
 
@@ -21,7 +48,7 @@
 
 - Make setupPodConfig helper agnostic of variable declaration type [\#104](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/104) ([simonihmig](https://github.com/simonihmig))
 - CI: Install npm@3 if necessary [\#103](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/103) ([Turbo87](https://github.com/Turbo87))
-- Update fs-extra to the latest version 🚀 [\#99](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/99) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Update fs-extra to the latest version 🚀 [\#99](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/99) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 
 ## [v0.17.0](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/v0.17.0) (2017-02-27)
 [Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.16.0...v0.17.0)
@@ -50,10 +77,10 @@
 - use the new MockBlueprintTaskFor api [\#89](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/89) ([kellyselden](https://github.com/kellyselden))
 - simplify package lookup [\#88](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/88) ([kellyselden](https://github.com/kellyselden))
 - add disableMocking option [\#87](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/87) ([kellyselden](https://github.com/kellyselden))
-- Update ember-cli-internal-test-helpers to the latest version 🚀 [\#86](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/86) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Update ember-cli-internal-test-helpers to the latest version 🚀 [\#86](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/86) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 - Remove obsolete --babel option [\#85](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/85) ([Turbo87](https://github.com/Turbo87))
 - CI: Enable automatic NPM deployment for tags [\#84](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/84) ([Turbo87](https://github.com/Turbo87))
-- Update dependencies to enable Greenkeeper 🌴 [\#79](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/79) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Update dependencies to enable Greenkeeper 🌴 [\#79](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/79) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 
 ## [v0.14.0](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/v0.14.0) (2016-11-23)
 [Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.13.2...v0.14.0)
