@@ -29,7 +29,7 @@ describe('Acceptance: ember generate ember-cli-blueprint-test-helpers', function
           // test ui output because we can't test for actual npm install modifying package.json
           expect(stripAnsi(result.outputStream.join(' ')))
             .to.contain('install package mocha');
-          expect(file('.npmignore')).to.contain('node-tests/');
+          expect(file('.npmignore')).to.contain('/node-tests');
         });
     });
 

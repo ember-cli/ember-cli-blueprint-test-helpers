@@ -10,7 +10,7 @@ module.exports = {
     this.insertTestCallToPackage(options);
 
     return Promise.all([
-      this.insertIntoFile('./.npmignore', 'node-tests/'),
+      this.insertIntoFile('./.npmignore', '/node-tests'),
       this.addPackagesToProject([{name: 'mocha', target: '^3.5.3'}]),
     ]);
   },
