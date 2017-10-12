@@ -1,5 +1,6 @@
 var fs = require('fs-extra');
 var path = require('path');
+var EOL = require('os').EOL;
 
 module.exports = {
   description: 'Installs dependencies for ember-cli-blueprint-test-helpers',
@@ -10,7 +11,7 @@ module.exports = {
     this.insertTestCallToPackage(options);
 
     return Promise.all([
-      this.insertIntoFile('./.npmignore', '/node-tests'),
+      this.insertIntoFile('./.npmignore', '/node-tests' + EOL),
       this.addPackagesToProject([{name: 'mocha', target: '^3.5.3'}]),
     ]);
   },
