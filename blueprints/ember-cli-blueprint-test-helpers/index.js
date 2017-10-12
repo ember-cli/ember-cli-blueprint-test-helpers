@@ -2,6 +2,12 @@ var fs = require('fs-extra');
 var path = require('path');
 var EOL = require('os').EOL;
 
+var travisYmlString =
+'  include:' + EOL +
+'    addons: skip' + EOL +
+'    env: nodetest' + EOL +
+'    script: npm run nodetest';
+
 module.exports = {
   description: 'Installs dependencies for ember-cli-blueprint-test-helpers',
 
@@ -12,8 +18,15 @@ module.exports = {
 
     return Promise.all([
       this.insertIntoFile('./.npmignore', '/node-tests' + EOL),
+      this.insertIntoTravisYml(),
       this.addMochaToPackage(),
     ]);
+  },
+
+  insertIntoTravisYml: function() {
+    return this.insertIntoFile('./.travis.yml', travisYmlString, {
+      after: '- env: EMBER_TRY_SCENARIO=ember-canary' + EOL
+    });
   },
 
   addMochaToPackage: function() {

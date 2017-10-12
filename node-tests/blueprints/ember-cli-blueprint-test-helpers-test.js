@@ -24,13 +24,14 @@ describe('Acceptance: ember generate ember-cli-blueprint-test-helpers', function
       var args = ['ember-cli-blueprint-test-helpers'];
 
       // pass any additional command line options in the arguments array
-      return emberNew()
+      return emberNew({ target: 'addon' })
         .then(() => emberGenerate(args))
         .then((result) => {
           // test ui output because we can't test for actual npm install modifying package.json
           expect(stripAnsi(result.outputStream.join(' ')))
-            .to.contain('install package mocha');
-          expect(file('.npmignore')).to.contain('/node-tests' + EOL);
+            .to.contain('install package mocha', 'shows console output');
+          expect(file('.npmignore')).to.contain('/node-tests' + EOL, 'updates .npmignore');
+          expect(file('.travis.yml')).to.contain('- env: EMBER_TRY_SCENARIO=ember-canary' + EOL + '  include:', 'updates .travis.yml');
         });
     });
 
