@@ -11,7 +11,7 @@ module.exports = {
 
     return Promise.all([
       this.insertIntoFile('./.npmignore', 'node-tests/'),
-      this.addPackagesToProject([{name: 'mocha', target: '^2.2.1'}]),
+      this.addPackagesToProject([{name: 'mocha', target: '^3.5.3'}]),
     ]);
   },
 
