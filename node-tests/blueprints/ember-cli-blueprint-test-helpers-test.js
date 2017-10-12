@@ -24,13 +24,13 @@ describe('Acceptance: ember generate ember-cli-blueprint-test-helpers', function
       var args = ['ember-cli-blueprint-test-helpers'];
 
       // pass any additional command line options in the arguments array
-      return emberNew()
+      return emberNew({ target: 'addon' })
         .then(() => emberGenerate(args))
         .then((result) => {
           // test ui output because we can't test for actual npm install modifying package.json
           expect(stripAnsi(result.outputStream.join(' ')))
             .to.contain('install package mocha');
-          expect(file('.npmignore')).to.contain('/node-tests' + EOL);
+          expect(file('.npmignore')).to.contains(EOL + '/node-tests' + EOL + '/tests' + EOL);
         });
     });
 

@@ -11,9 +11,13 @@ module.exports = {
     this.insertTestCallToPackage(options);
 
     return Promise.all([
-      this.insertIntoFile('./.npmignore', '/node-tests' + EOL),
+      this.insertIntoNpmIgnore(),
       this.addMochaToPackage(),
     ]);
+  },
+
+  insertIntoNpmIgnore: function() {
+    return this.insertIntoFile('./.npmignore', EOL + '/node-tests', { before: '/tests' + EOL });
   },
 
   addMochaToPackage: function() {
