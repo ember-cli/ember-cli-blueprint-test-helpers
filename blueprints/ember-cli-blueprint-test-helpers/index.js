@@ -12,8 +12,14 @@ module.exports = {
 
     return Promise.all([
       this.insertIntoFile('./.npmignore', '/node-tests' + EOL),
-      this.addPackagesToProject([{name: 'mocha', target: '^3.5.3'}]),
+      this.addMochaToPackage(),
     ]);
+  },
+
+  addMochaToPackage: function() {
+    var pkg = fs.readJsonSync(path.join(__dirname, '../../package.json'));
+
+    return this.addPackageToProject('mocha', pkg.devDependencies['mocha']);
   },
 
   insertTestCallToPackage: function() {
