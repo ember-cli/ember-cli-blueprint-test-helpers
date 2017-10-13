@@ -2,6 +2,7 @@ module.exports = {
   root: true,
   plugins: [
     'chai-expect',
+    'mocha',
   ],
   extends: 'eslint:recommended',
   env: {
@@ -45,5 +46,7 @@ module.exports = {
     'prefer-arrow-callback': 2,
 
     'chai-expect/missing-assertion': 2,
+
+    'mocha/no-exclusive-tests': 2,
   },
 };
