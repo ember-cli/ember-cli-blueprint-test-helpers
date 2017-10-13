@@ -5,9 +5,9 @@ const EOL = require('os').EOL;
 module.exports = {
   description: 'Installs dependencies for ember-cli-blueprint-test-helpers',
 
-  normalizeEntityName: function() {},
+  normalizeEntityName() {},
 
-  afterInstall: function(options) {
+  afterInstall(options) {
     this.insertTestCallToPackage(options);
 
     return Promise.all([
@@ -16,13 +16,13 @@ module.exports = {
     ]);
   },
 
-  addMochaToPackage: function() {
+  addMochaToPackage() {
     let pkg = fs.readJsonSync(path.join(__dirname, '../../package.json'));
 
     return this.addPackageToProject('mocha', pkg.devDependencies['mocha']);
   },
 
-  insertTestCallToPackage: function() {
+  insertTestCallToPackage() {
     let insert = false;
     let fullPath = path.join(this.project.root, 'package.json');
     let scriptContents = 'mocha node-tests --recursive';
