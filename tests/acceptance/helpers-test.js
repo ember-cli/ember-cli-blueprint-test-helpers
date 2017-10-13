@@ -1,3 +1,4 @@
+'use strict';
 const setupTestHooks = require('../../lib/helpers/setup');
 
 const blueprintHelpers = require('../../helpers');
