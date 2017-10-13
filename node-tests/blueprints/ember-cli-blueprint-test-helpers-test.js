@@ -1,27 +1,27 @@
 'use strict';
 
-var blueprintHelpers = require('../../helpers');
-var setupTestHooks = blueprintHelpers.setupTestHooks;
-var emberNew = blueprintHelpers.emberNew;
-var emberGenerate = blueprintHelpers.emberGenerate;
+const blueprintHelpers = require('../../helpers');
+const setupTestHooks = blueprintHelpers.setupTestHooks;
+const emberNew = blueprintHelpers.emberNew;
+const emberGenerate = blueprintHelpers.emberGenerate;
 
-var fs = require('fs-extra');
-var stripAnsi = require('strip-ansi');
-var expect = require('../../chai').expect;
-var file = require('../../chai').file;
-var EOL = require('os').EOL;
+const fs = require('fs-extra');
+const stripAnsi = require('strip-ansi');
+const expect = require('../../chai').expect;
+const file = require('../../chai').file;
+const EOL = require('os').EOL;
 
 function getDevDependencies() {
   let pkg = fs.readJsonSync('package.json');
   return Object.keys(pkg.devDependencies);
 }
 
-describe('Acceptance: ember generate ember-cli-blueprint-test-helpers', function() {
+describe('Acceptance: ember generate ember-cli-blueprint-test-helpers', () => {
   describe('with mocking', function() {
     setupTestHooks(this);
 
-    it('ember-cli-blueprint-test-helpers', function() {
-      var args = ['ember-cli-blueprint-test-helpers'];
+    it('ember-cli-blueprint-test-helpers', () => {
+      let args = ['ember-cli-blueprint-test-helpers'];
 
       // pass any additional command line options in the arguments array
       return emberNew()
@@ -30,12 +30,12 @@ describe('Acceptance: ember generate ember-cli-blueprint-test-helpers', function
           // test ui output because we can't test for actual npm install modifying package.json
           expect(stripAnsi(result.outputStream.join(' ')))
             .to.contain('install package mocha');
-          expect(file('.npmignore')).to.contain('/node-tests' + EOL);
+          expect(file('.npmignore')).to.contain(`/node-tests${EOL}`);
         });
     });
 
-    it('doesn\'t write to existing nodetest scripts', function() {
-      var args = ['ember-cli-blueprint-test-helpers'];
+    it('doesn\'t write to existing nodetest scripts', () => {
+      let args = ['ember-cli-blueprint-test-helpers'];
 
       // pass any additional command line options in the arguments array
       return emberNew()
@@ -60,8 +60,8 @@ describe('Acceptance: ember generate ember-cli-blueprint-test-helpers', function
       timeout: 300000
     });
 
-    it('adds mocha as a dependency', function() {
-      var args = ['ember-cli-blueprint-test-helpers'];
+    it('adds mocha as a dependency', () => {
+      let args = ['ember-cli-blueprint-test-helpers'];
 
       return emberNew()
         .then(() => {

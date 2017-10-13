@@ -41,6 +41,8 @@ module.exports = {
     'no-console': 0,
     'comma-dangle': 0,
     'no-unused-expressions': 0,
+    'prefer-template': 2,
+    'prefer-arrow-callback': 2,
 
     'chai-expect/missing-assertion': 2,
   },
