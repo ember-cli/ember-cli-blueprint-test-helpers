@@ -2,7 +2,7 @@
 
 const lint = require('mocha-eslint');
 
-let paths = [
+var paths = [
   'blueprints',
   'lib',
   'node-tests',

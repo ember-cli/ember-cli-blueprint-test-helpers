@@ -23,7 +23,7 @@ describe('Acceptance: helpers', function() {
   });
 
   describe('setupTestHooks', () => {
-    let symlink = path.resolve(__dirname, '..', '..', 'node_modules', 'ember-cli-blueprint-test-helpers');
+    var symlink = path.resolve(__dirname, '..', '..', 'node_modules', 'ember-cli-blueprint-test-helpers');
 
     after(() => {
       expect(dir(symlink)).to.not.exist;
