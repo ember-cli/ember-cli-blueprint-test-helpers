@@ -1,6 +1,8 @@
-var chai = require('chai');
-var chaiAsPromised = require('chai-as-promised');
-var chaiFiles = require('chai-files');
+'use strict';
+
+const chai = require('chai');
+const chaiAsPromised = require('chai-as-promised');
+const chaiFiles = require('chai-files');
 
 chai.use(chaiAsPromised);
 chai.use(chaiFiles);

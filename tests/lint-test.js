@@ -1,8 +1,8 @@
 'use strict';
 
-var lint = require('mocha-eslint');
+const lint = require('mocha-eslint');
 
-var paths = [
+let paths = [
   'blueprints',
   'lib',
   'node-tests',

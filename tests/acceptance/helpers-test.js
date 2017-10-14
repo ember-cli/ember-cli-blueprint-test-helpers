@@ -1,18 +1,19 @@
-var setupTestHooks = require('../../lib/helpers/setup');
+'use strict';
+const setupTestHooks = require('../../lib/helpers/setup');
 
-var blueprintHelpers = require('../../helpers');
-var emberNew = blueprintHelpers.emberNew;
-var emberGenerateDestroy = blueprintHelpers.emberGenerateDestroy;
-var path = require('path');
+const blueprintHelpers = require('../../helpers');
+const emberNew = blueprintHelpers.emberNew;
+const emberGenerateDestroy = blueprintHelpers.emberGenerateDestroy;
+const path = require('path');
 
-var chai = require('../../chai');
-var expect = chai.expect;
-var dir = chai.dir;
+const chai = require('../../chai');
+const expect = chai.expect;
+const dir = chai.dir;
 
 describe('Acceptance: helpers', function() {
   setupTestHooks(this);
-  describe('emberGenerateDestroy', function() {
-    it('blueprint-test foo', function() {
+  describe('emberGenerateDestroy', () => {
+    it('blueprint-test foo', () => {
       return emberNew()
         .then(() => emberGenerateDestroy(['blueprint-test', 'foo'], (file) => {
           expect(file('node-tests/blueprints/foo-test.js'))
@@ -22,14 +23,14 @@ describe('Acceptance: helpers', function() {
     });
   });
 
-  describe('setupTestHooks', function() {
+  describe('setupTestHooks', () => {
     var symlink = path.resolve(__dirname, '..', '..', 'node_modules', 'ember-cli-blueprint-test-helpers');
 
-    after(function() {
+    after(() => {
       expect(dir(symlink)).to.not.exist;
     });
 
-    it('cleans up symlinked addon', function() {
+    it('cleans up symlinked addon', () => {
       return emberNew()
         .then(() => {
           expect(dir(symlink)).to.exist;

@@ -1,16 +1,16 @@
 module.exports = {
-  fileMapTokens: function() {
+  fileMapTokens() {
     return {
-      __root__: function(/* options */) {
+      __root__(/* options */) {
         return 'node-tests/blueprints';
       },
-      __name__: function(options) {
+      __name__(options) {
         return options.locals.blueprintName;
       }
     };
   },
 
-  locals: function(options) {
+  locals(options) {
     return {
       blueprintName: options.entity.name
     };
