@@ -29,7 +29,6 @@
     "exists-sync": "0.0.3",
     "findup": "^0.1.5",
     "fs-extra": "^4.0.0",
-    "lodash.merge": "^4.4.0",
     "testdouble": "^3.2.6",
     "tmp-sync": "^1.0.0"
   },
