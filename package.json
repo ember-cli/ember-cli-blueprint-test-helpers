@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-blueprint-test-helpers",
-  "version": "0.18.2",
+  "version": "0.18.3",
   "description": "Blueprint test helpers for ember-cli. Mocks ember-cli for generate and destroy commands.",
   "main": "index.js",
   "scripts": {
