@@ -19,7 +19,7 @@ module.exports = {
   },
 
   addMochaToPackage() {
-    let pkg = fs.readJsonSync(path.join(__dirname, '../../package.json'));
+    let pkg = require('../../package.json');
 
     return this.addPackageToProject('mocha', pkg.devDependencies['mocha']);
   },
