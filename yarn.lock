@@ -1947,6 +1947,14 @@ fs-extra@^4.0.0:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
+fs-extra@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-5.0.0.tgz#414d0110cdd06705734d055652c5411260c31abd"
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
 fs-sync@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/fs-sync/-/fs-sync-1.0.4.tgz#2f94eade31862ec0a9f33a1c2546dfb1a3f3d1ae"
