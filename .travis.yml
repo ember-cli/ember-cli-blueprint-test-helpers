@@ -1,8 +1,9 @@
 language: node_js
 
 node_js:
+  - '10'
+  - '8'
   - '6'
-  - '4'
 
 before_install:
   # if npm version is less than 3.0.0, upgrade to 3
