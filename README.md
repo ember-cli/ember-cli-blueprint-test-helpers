@@ -1,4 +1,5 @@
 
+- `{Boolean} [options.isModuleUnification=true]` a toggle to use MU file structure 
 ember-cli-blueprint-test-helpers
 ==============================================================================
 
@@ -60,7 +61,7 @@ describe('Acceptance: ember generate and destroy my-blueprint', function() {
   setupTestHooks(this);
 
   it('my-blueprint foo', function() {
-    var args = ['my-blueprint', 'foo'];
+    const args = ['my-blueprint', 'foo'];
 
     // create a new Ember.js app in the working directory
     return emberNew()
@@ -87,7 +88,7 @@ describe('Acceptance: ember generate and destroy my-blueprint', function() {
   setupTestHooks(this);
 
   it('my-blueprint foo', function() {
-    var args = ['my-blueprint', 'foo'];
+    const args = ['my-blueprint', 'foo'];
 
     // create a new Ember.js app in the working directory
     return emberNew()
@@ -102,6 +103,39 @@ describe('Acceptance: ember generate and destroy my-blueprint', function() {
 
       // then destroy the `my-blueprint` blueprint called `foo`
       .then(() => emberDestroy(args))
+
+      // then assert that the files were destroyed correctly
+      .then(() => expect(file('path/to/file.js')).to.not.exist);
+  });
+});
+```
+
+if your blueprints support the new
+[MU file structure](https://github.com/emberjs/rfcs/pull/143), you can test them
+using this option: `{ ìsModuleUnification: true }`
+
+```js
+describe('Acceptance: ember generate and destroy my-blueprint', function() {
+  // create and destroy temporary working directories
+  setupTestHooks(this);
+
+  it('my-blueprint foo', function() {
+    const args = ['my-blueprint', 'foo'];
+
+    // create a new Ember.js app in the working directory
+    // this app will have MU file structure, namely a `src` directory
+    return emberNew({ isModuleUnification: true })
+
+      // then generate the `my-blueprint` blueprint called `foo`
+      .then(() => emberGenerate(args, { isModuleUnification: true }))
+
+      // then assert that the files were generated correctly
+      .then(() => expect(file('path/to/file.js'))
+        .to.contain('file contents to match')
+        .to.contain('more file contents\n'))
+
+      // then destroy the `my-blueprint` blueprint called `foo`
+      .then(() => emberDestroy(args, { isModuleUnification: true }))
 
       // then assert that the files were destroyed correctly
       .then(() => expect(file('path/to/file.js')).to.not.exist);
@@ -152,36 +186,41 @@ Create a new Ember.js app or addon in the current working directory.
 
 - `{Object} [options]` optional parameters
 - `{String} [options.target='app']` the type of project to create (`app`, `addon` or `in-repo-addon`)
+- `{Boolean} [options.isModuleUnification=true]` a toggle to use MU file structure 
 
 **Returns:** `{Promise}`
 
 ---
 
-### `emberGenerate(args)`
+### `emberGenerate(args, options)`
 
 Run a blueprint generator.
 
 **Parameters:**
 
 - `{Array.<String>} args` arguments to pass to `ember generate` (e.g. `['my-blueprint', 'foo']`)
+- `{Object} [options]` optional parameters
+- `{Boolean} [options.isModuleUnification=true]` a toggle to use MU file structure 
 
 **Returns:** `{Promise}`
 
 ---
 
-### `emberDestroy(args)`
+### `emberDestroy(args, options)`
 
 Run a blueprint destructor.
 
 **Parameters:**
 
 - `{Array.<String>} args` arguments to pass to `ember destroy` (e.g. `['my-blueprint', 'foo']`)
+- `{Object} [options]` optional parameters
+- `{Boolean} [options.isModuleUnification=true]` a toggle to use MU file structure 
 
 **Returns:** `{Promise}`
 
 ---
 
-### `emberGenerateDestroy(args, assertionCallback)`
+### `emberGenerateDestroy(args, assertionCallback, options)`
 
 Run a blueprint generator and the corresponding blueprint destructor while
 checking assertions in between.
@@ -190,6 +229,8 @@ checking assertions in between.
 
 - `{Array.<String>} args` arguments to pass to `ember generate` (e.g. `['my-blueprint', 'foo']`)
 - `{Function} assertionCallback` the callback function in which the assertions should happen
+- `{Object} [options]` optional parameters
+- `{Boolean} [options.isModuleUnification=true]` a toggle to use MU file structure 
 
 **Returns:** `{Promise}`
 

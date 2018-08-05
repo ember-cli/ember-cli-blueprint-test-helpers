@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
   fileMapTokens() {
     return {
@@ -7,13 +9,16 @@ module.exports = {
       __name__(options) {
         return options.locals.blueprintName;
       }
-    };
+    }
   },
 
   locals(options) {
-    return {
-      blueprintName: options.entity.name
-    };
-  }
+    const blueprintName = options.entity.name;
+    const muOption =
+      (options.project.isModuleUnification())
+        ? '{ isModuleUnification: true }'
+        : null;
 
-};
+    return { blueprintName, muOption };
+  }
+}
