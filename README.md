@@ -1,5 +1,4 @@
 
-- `{Boolean} [options.isModuleUnification=true]` a toggle to use MU file structure 
 ember-cli-blueprint-test-helpers
 ==============================================================================
 
