@@ -31,7 +31,7 @@
     "tmp-sync": "^1.0.0"
   },
   "devDependencies": {
-    "ember-cli": "~2.16.0",
+    "ember-cli": "github:ember-cli/ember-cli",
     "eslint": "^4.1.0",
     "eslint-plugin-chai-expect": "^1.0.0",
     "eslint-plugin-mocha": "^4.11.0",
