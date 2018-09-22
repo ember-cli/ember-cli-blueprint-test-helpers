@@ -1,1 +1,9 @@
-blueprint-nodetest.js
+/node-tests/
+/tests/
+/.editorconfig
+/.eslintignore
+/.eslintrc.js
+/.github_changelog_generator
+/.travis.yml
+/appveyor.yml
+/yarn.lock
