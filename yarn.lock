@@ -4162,11 +4162,12 @@ qs@6.5.1, qs@^6.4.0:
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.1.tgz#349cdf6eef89ec45c12d7d5eb3fc0c870343a6d8"
 
-quibble@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/quibble/-/quibble-0.5.1.tgz#b7fd1fc0a9c1eea012ac9d71bcb6da8d9a5dc9e9"
+quibble@^0.5.5:
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/quibble/-/quibble-0.5.5.tgz#669fb731520a923e0a98f8076b7eb55e409f73f9"
   dependencies:
     lodash "^4.17.2"
+    resolve "^1.7.1"
 
 quick-temp@^0.1.2, quick-temp@^0.1.3, quick-temp@^0.1.5, quick-temp@^0.1.8:
   version "0.1.8"
@@ -4324,13 +4325,13 @@ resolve-url@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
 
-resolve@^1.3.3, resolve@^1.4.0:
+resolve@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.4.0.tgz#a75be01c53da25d934a98ebd0e4c4a7312f92a86"
   dependencies:
     path-parse "^1.0.5"
 
-resolve@^1.8.1:
+resolve@^1.7.1, resolve@^1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.8.1.tgz#82f1ec19a423ac1fbd080b0bab06ba36e84a7a26"
   dependencies:
@@ -4920,14 +4921,14 @@ temp@0.8.3:
     rimraf "~2.2.6"
 
 testdouble@^3.2.6:
-  version "3.2.6"
-  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.2.6.tgz#8fc47149c59f1becc795bf80f02b41de30ea4035"
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.8.1.tgz#8c74b6807f82fb07c2387a0640b4ae594b09b964"
   dependencies:
     es6-map "^0.1.5"
     lodash "^4.17.4"
-    quibble "^0.5.1"
-    resolve "^1.3.3"
+    quibble "^0.5.5"
     stringify-object-es5 "^2.5.0"
+    theredoc "^1.0.0"
 
 testem@^2.9.2:
   version "2.9.2"
@@ -4968,6 +4969,10 @@ text-table@~0.2.0:
 "textextensions@1 || 2":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/textextensions/-/textextensions-2.1.0.tgz#1be0dc2a0dc244d44be8a09af6a85afb93c4dbc3"
+
+theredoc@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/theredoc/-/theredoc-1.0.0.tgz#bcace376af6feb1873efbdd0f91ed026570ff062"
 
 through@^2.3.6, through@^2.3.8:
   version "2.3.8"
