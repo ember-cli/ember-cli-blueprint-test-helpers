@@ -1,5 +1,60 @@
 # Change Log
 
+## v0.19.0 (2018-09-22)
+
+#### :boom: Breaking Change
+* [#155](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/155) Increase required minimum Node version to v6 ([@dcyriller](https://github.com/dcyriller))
+
+#### :rocket: Enhancement
+* [#153](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/153) Add MU support to blueprints test helpers ([@dcyriller](https://github.com/dcyriller))
+
+#### :memo: Documentation
+* [#165](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/165) package.json: Declare minimum Node versions ([@Turbo87](https://github.com/Turbo87))
+* [#157](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/157) Fix typo in README ([@dcyriller](https://github.com/dcyriller))
+
+#### :house: Internal
+* [#159](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/159) Use ember-cli v3.5.0-beta.1 ([@dcyriller](https://github.com/dcyriller))
+
+#### Committers: 2
+- Cyrille David ([@dcyriller](https://github.com/dcyriller))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
+## v0.18.3 (2017-10-16)
+
+#### :rocket: Enhancement
+* [#132](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/132) update mocha to 4 ([@kellyselden](https://github.com/kellyselden))
+
+#### Committers: 1
+- Kelly Selden ([@kellyselden](https://github.com/kellyselden))
+
+
+## v0.18.2 (2017-10-14)
+
+#### :house: Internal
+* [#142](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/142) apply code style of node 4+ ([@mbeatrizmagalhaes](https://github.com/mbeatrizmagalhaes))
+* [#135](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/135) remove exists-sync ([@kellyselden](https://github.com/kellyselden))
+* [#136](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/136) remove findup ([@kellyselden](https://github.com/kellyselden))
+* [#137](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/137) remove lodash.merge ([@kellyselden](https://github.com/kellyselden))
+* [#140](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/140) remove rimraf ([@kellyselden](https://github.com/kellyselden))
+
+#### Committers: 2
+- Beatriz Magalhães ([@mbeatrizmagalhaes](https://github.com/mbeatrizmagalhaes))
+- Kelly Selden ([@kellyselden](https://github.com/kellyselden))
+
+
+## v0.18.1 (2017-10-13)
+
+#### :bug: Bug Fix
+* [#124](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/124) Add missing "testdouble" dependency ([@Turbo87](https://github.com/Turbo87))
+
+#### :house: Internal
+* [#125](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/125) Use ~ constraint for "ember-cli" ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 1
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
 ## [v0.18.0](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/tree/v0.18.0) (2017-10-03)
 [Full Changelog](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/compare/v0.17.2...v0.18.0)
 
