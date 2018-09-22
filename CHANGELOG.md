@@ -1,5 +1,14 @@
 # Change Log
 
+## v0.19.1 (2018-09-22)
+
+#### :rocket: Enhancement
+* [#166](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/166) Adjust `.npmignore` file ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 1
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
 ## v0.19.0 (2018-09-22)
 
 #### :boom: Breaking Change
