@@ -1506,9 +1506,9 @@ ember-cli-string-utils@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ember-cli-string-utils/-/ember-cli-string-utils-1.1.0.tgz#39b677fc2805f55173735376fcef278eaa4452a1"
 
-"ember-cli@github:ember-cli/ember-cli":
-  version "3.4.0-beta.2"
-  resolved "https://codeload.github.com/ember-cli/ember-cli/tar.gz/6a4c515ff62e6a0a5d1c2055ad393171062ffd5e"
+ember-cli@^3.5.0-beta.1:
+  version "3.5.0-beta.1"
+  resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-3.5.0-beta.1.tgz#529a5916659f108933e2da77b163669f5d643a73"
   dependencies:
     amd-name-resolver "^1.2.0"
     babel-plugin-transform-es2015-modules-amd "^6.24.1"
@@ -1555,6 +1555,7 @@ ember-cli-string-utils@^1.1.0:
     find-up "^3.0.0"
     find-yarn-workspace-root "^1.1.0"
     fixturify "^0.3.4"
+    fixturify-project "^1.5.3"
     fs-extra "^7.0.0"
     fs-tree-diff "^0.5.7"
     get-caller-file "^1.0.0"
@@ -2159,6 +2160,13 @@ fireworm@^0.7.0:
     lodash.debounce "^3.1.1"
     lodash.flatten "^3.0.2"
     minimatch "^3.0.2"
+
+fixturify-project@^1.5.3:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/fixturify-project/-/fixturify-project-1.5.3.tgz#2ba4ffec59c1d79ae6638f818c0847eb974d179b"
+  dependencies:
+    fixturify "^0.3.4"
+    tmp "^0.0.33"
 
 fixturify@^0.3.4:
   version "0.3.4"
