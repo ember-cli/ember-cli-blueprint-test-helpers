@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "ember-cli": "^3.5.0-beta.1",
-    "eslint": "^4.1.0",
+    "eslint": "^5.7.0",
     "eslint-plugin-chai-expect": "^2.0.1",
     "eslint-plugin-mocha": "^4.11.0",
     "mocha": "^5.0.0",
