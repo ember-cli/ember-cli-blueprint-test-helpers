@@ -13,6 +13,9 @@ environment:
     - nodejs_version: "8"
     - nodejs_version: "10"
 
+matrix:
+  fast_finish: true
+
 # Install scripts. (runs after repo cloning)
 install:
   # Get the latest stable version of Node.js or io.js
