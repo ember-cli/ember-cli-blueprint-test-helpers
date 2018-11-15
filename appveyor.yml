@@ -3,7 +3,6 @@ version: "{build}"
 
 cache:
   - '%APPDATA%\npm-cache -> package.json'
-  - '%APPDATA%\Roaming\bower'
 
 # Test against this version of Node.js
 environment:
