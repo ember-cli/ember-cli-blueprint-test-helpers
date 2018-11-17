@@ -3,7 +3,6 @@ version: "{build}"
 
 cache:
   - '%APPDATA%\npm-cache -> package.json'
-  - '%APPDATA%\Roaming\bower'
 
 # Test against this version of Node.js
 environment:
@@ -12,6 +11,13 @@ environment:
     - nodejs_version: "6"
     - nodejs_version: "8"
     - nodejs_version: "10"
+
+matrix:
+  fast_finish: true
+
+branches:
+  only:
+    - master
 
 # Install scripts. (runs after repo cloning)
 install:
