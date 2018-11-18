@@ -44,6 +44,21 @@ describe('Acceptance: helpers', function() {
           expect(process.env["EMBER_CLI_MODULE_UNIFICATION"]).to.equal(undefined);
         });
     });
+
+    it('emberNew - MU addon', () => {
+      return emberNew({ target: 'addon', isModuleUnification: true })
+        .then(() => {
+          const srcPath = path.resolve(process.cwd(), 'src');
+          const appPath = path.resolve(process.cwd(), 'app');
+          const addonPath = path.resolve(process.cwd(), 'addon');
+          expect(fs.existsSync(srcPath)).to.equal(true);
+          expect(fs.existsSync(appPath)).to.equal(false);
+          expect(fs.existsSync(addonPath)).to.equal(false);
+        })
+        .then(() => {
+          expect(process.env["EMBER_CLI_MODULE_UNIFICATION"]).to.equal(undefined);
+        });
+    });
   });
 
   describe('emberGenerateDestroy', () => {
