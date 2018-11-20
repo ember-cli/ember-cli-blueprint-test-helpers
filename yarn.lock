@@ -5180,8 +5180,8 @@ temp@0.8.3:
     rimraf "~2.2.6"
 
 testdouble@^3.2.6:
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.8.2.tgz#f9e8499c2bae2dc1ad1b438a23c74e2808afa058"
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.9.0.tgz#50f9c8a7e9dc131437a34d20094d57654ed0d3b9"
   dependencies:
     es6-map "^0.1.5"
     lodash "^4.17.11"
