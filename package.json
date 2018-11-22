@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "mocha tests/lint-test",
-    "test": "npm run lint && mocha tests node-tests --recursive"
+    "test": "mocha tests node-tests --recursive"
   },
   "ember-addon": {
     "main": "index.js"
