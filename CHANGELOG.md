@@ -1,5 +1,19 @@
 # Change Log
 
+## v0.19.2 (2018-12-18)
+
+#### :bug: Bug Fix
+* [#193](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/193) Restore EMBER_CLI_MODULE_UNIFICATION env var ([@dcyriller](https://github.com/dcyriller))
+
+#### :house: Internal
+* [#194](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/194) Add `lerna-changelog` dev dependency ([@Turbo87](https://github.com/Turbo87))
+* [#184](https://github.com/ember-cli/ember-cli-blueprint-test-helpers/pull/184) Improve CI configuration ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 2
+- Cyrille David ([@dcyriller](https://github.com/dcyriller))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
 ## v0.19.1 (2018-09-22)
 
 #### :rocket: Enhancement
