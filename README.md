@@ -55,6 +55,16 @@ which will generate a test file at `node-tests/blueprints/my-blueprint-test.js`.
 ### Example Usage
 
 ```js
+const { 
+  setupTestHooks,
+  emberNew,
+  emberGenerateDestroy,
+} = require('ember-cli-blueprint-test-helpers/helpers');
+
+const {
+  expect
+} = require('ember-cli-blueprint-test-helpers/chai');
+
 describe('Acceptance: ember generate and destroy my-blueprint', function() {
   // create and destroy temporary working directories
   setupTestHooks(this);
@@ -82,6 +92,18 @@ describe('Acceptance: ember generate and destroy my-blueprint', function() {
 or more explicitly:
 
 ```js
+const { 
+  setupTestHooks,
+  emberNew,
+  emberGenerate,
+  emberDestroy,
+} = require('ember-cli-blueprint-test-helpers/helpers');
+
+const {
+  expect,
+  file,
+} = require('ember-cli-blueprint-test-helpers/chai');
+
 describe('Acceptance: ember generate and destroy my-blueprint', function() {
   // create and destroy temporary working directories
   setupTestHooks(this);
@@ -114,6 +136,18 @@ if your blueprints support the new
 using this option: `{ ìsModuleUnification: true }`
 
 ```js
+const { 
+  setupTestHooks,
+  emberNew,
+  emberGenerate,
+  emberDestroy,
+} = require('ember-cli-blueprint-test-helpers/helpers');
+
+const {
+  expect,
+  file,
+} = require('ember-cli-blueprint-test-helpers/chai');
+
 describe('Acceptance: ember generate and destroy my-blueprint', function() {
   // create and destroy temporary working directories
   setupTestHooks(this);
