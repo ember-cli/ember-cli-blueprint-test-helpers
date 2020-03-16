@@ -14,11 +14,6 @@ module.exports = {
 
   locals(options) {
     const blueprintName = options.entity.name;
-    const muOption =
-      (options.project.isModuleUnification())
-        ? '{ isModuleUnification: true }'
-        : null;
-
-    return { blueprintName, muOption };
+    return { blueprintName };
   }
 }

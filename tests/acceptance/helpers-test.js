@@ -33,17 +33,6 @@ describe('Acceptance: helpers', function() {
           expect(fs.existsSync(addonPath)).to.equal(true);
         });
     });
-
-    it('emberNew - MU app', () => {
-      return emberNew({ isModuleUnification: true })
-        .then(() => {
-          const srcPath = path.resolve(process.cwd(), 'src');
-          expect(fs.existsSync(srcPath)).to.equal(true);
-        })
-        .then(() => {
-          expect(process.env["EMBER_CLI_MODULE_UNIFICATION"]).to.equal(undefined);
-        });
-    });
   });
 
   describe('emberGenerateDestroy', () => {
@@ -53,25 +42,6 @@ describe('Acceptance: helpers', function() {
           expect(file('node-tests/blueprints/foo-test.js'))
             .to.contain('return emberNew()');
         }));
-    });
-
-    it('blueprint-test foo - in a MU app with no flag', () => {
-      return emberNew({ isModuleUnification: true })
-        .then(() => emberGenerateDestroy(['blueprint-test', 'foo'], (file) => {
-          expect(file('node-tests/blueprints/foo-test.js'))
-            .to.contain('return emberNew()');
-        }));
-    });
-
-    it('blueprint-test foo - in a MU app with MU flag', () => {
-      return emberNew({ isModuleUnification: true })
-        .then(() => emberGenerateDestroy(['blueprint-test', 'foo'], (file) => {
-          expect(file('node-tests/blueprints/foo-test.js'))
-            .to.contain('return emberNew({ isModuleUnification: true })');
-        }, { isModuleUnification: true }))
-        .then(() => {
-          expect(process.env["EMBER_CLI_MODULE_UNIFICATION"]).to.equal(undefined);
-        });
     });
   });
 
@@ -88,23 +58,6 @@ describe('Acceptance: helpers', function() {
         .then(() => emberDestroy(args))
         .then(() => {
           expect(file('node-tests/blueprints/foo-test.js')).to.not.exist;
-        });
-    });
-
-    it('blueprint-test foo - in a MU app', () => {
-      const args = ['blueprint-test', 'foo'];
-
-      return emberNew({ isModuleUnification: true })
-        .then(() => emberGenerate(args, { isModuleUnification: true }))
-        .then(() => {
-          expect(file('node-tests/blueprints/foo-test.js'))
-            .to.contain('return emberNew({ isModuleUnification: true })');
-        })
-        .then(() => emberDestroy(args, { isModuleUnification: true }))
-        .then(() => {
-          expect(file('node-tests/blueprints/foo-test.js')).to.not.exist;
-
-          expect(process.env["EMBER_CLI_MODULE_UNIFICATION"]).to.equal(undefined);
         });
     });
   });
