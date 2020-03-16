@@ -1735,7 +1735,7 @@ ember-cli-string-utils@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ember-cli-string-utils/-/ember-cli-string-utils-1.1.0.tgz#39b677fc2805f55173735376fcef278eaa4452a1"
 
-ember-cli@^3.9.0:
+ember-cli@~3.9.0:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-3.9.0.tgz#7ee8120c48514488c692265c4a429625e8f0187e"
   integrity sha512-y5PAdj08BApNUXL4IL4rOo3+8M6BQKobCx2zvczCyu9jjPaxfZ+X/xEw6UHXe5F3i3tWm7IwX9kG6sz5pv7vuQ==
