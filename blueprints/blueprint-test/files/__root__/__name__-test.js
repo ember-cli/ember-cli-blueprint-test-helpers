@@ -17,7 +17,7 @@ describe('Acceptance: ember generate and destroy <%= blueprintName %>', function
     let args = ['<%= blueprintName %>', 'foo'];
 
     // pass any additional command line options in the arguments array
-    return emberNew(<%= muOption %>)
+    return emberNew()
       .then(() => emberGenerateDestroy(args, (/* file */) => {
         // expect(file('app/type/foo.js')).to.contain('foo');
     }));
