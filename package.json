@@ -27,7 +27,7 @@
     "chai-files": "^1.0.0",
     "debug": "^4.1.0",
     "ember-cli-internal-test-helpers": "^0.9.1",
-    "fs-extra": "^9.0.0",
+    "fs-extra": "^9.0.1",
     "testdouble": "^3.16.0",
     "tmp-sync": "^1.0.0"
   },
