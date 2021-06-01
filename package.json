@@ -37,7 +37,7 @@
     "eslint-plugin-chai-expect": "^2.2.0",
     "eslint-plugin-mocha": "^8.1.0",
     "lerna-changelog": "^1.0.1",
-    "mocha": "^8.3.2",
+    "mocha": "^8.4.0",
     "mocha-eslint": "^4.0.0",
     "strip-ansi": "^6.0.0"
   },
