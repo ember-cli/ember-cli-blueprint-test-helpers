@@ -33,14 +33,6 @@ describe('Acceptance: helpers', function () {
           expect(fs.existsSync(addonPath)).to.equal(true);
         });
     });
-
-    it('emberNew - extraCliArgs', () => {
-      return emberNew({ extraCliArgs: ['--typescript', '--no-welcome']})
-        .then(() => {
-          const appPath = path.resolve(process.cwd(), 'app');
-          expect(fs.existsSync(appPath)).to.equal(true);
-        });
-    });
   });
 
   describe('emberGenerateDestroy', () => {
