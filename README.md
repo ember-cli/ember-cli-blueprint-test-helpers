@@ -3,8 +3,8 @@ ember-cli-blueprint-test-helpers
 ==============================================================================
 
 [![npm version](https://badge.fury.io/js/ember-cli-blueprint-test-helpers.svg)](https://badge.fury.io/js/ember-cli-blueprint-test-helpers)
+[![GitHub Actions CI][github-actions-badge]][github-actions-ci-url]
 [![Build Status](https://travis-ci.org/ember-cli/ember-cli-blueprint-test-helpers.svg?branch=master)](https://travis-ci.org/ember-cli/ember-cli-blueprint-test-helpers)
-[![Build status](https://ci.appveyor.com/api/projects/status/github/ember-cli/ember-cli-blueprint-test-helpers?svg=true)](https://ci.appveyor.com/project/embercli/ember-cli-blueprint-test-helpers/branch/master)
 
 test helpers for [ember-cli](https://github.com/ember-cli/ember-cli) blueprints
 
