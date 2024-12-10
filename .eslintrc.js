@@ -28,7 +28,6 @@ module.exports = {
     'no-debugger': 2,
     'eqeqeq': 2,
     'no-eval': 2,
-    'linebreak-style': [2, 'unix'],
     'new-cap': [2, {
       properties: false,
     }],
