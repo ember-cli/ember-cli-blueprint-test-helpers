@@ -14,7 +14,7 @@ const expect = chai.expect;
 const dir = chai.dir;
 const file = chai.file;
 
-describe('Acceptance: helpers', function() {
+describe('Acceptance: helpers', function () {
   setupTestHooks(this);
 
   describe('emberNew', () => {
