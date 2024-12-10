@@ -14,7 +14,7 @@ const expect = chai.expect;
 const dir = chai.dir;
 const file = chai.file;
 
-describe('Acceptance: helpers', function() {
+describe('Acceptance: helpers', function () {
   setupTestHooks(this);
 
   describe('emberNew', () => {
@@ -31,6 +31,14 @@ describe('Acceptance: helpers', function() {
         .then(() => {
           const addonPath = path.resolve(process.cwd(), 'addon');
           expect(fs.existsSync(addonPath)).to.equal(true);
+        });
+    });
+
+    it('emberNew - extraCliArgs', () => {
+      return emberNew({ extraCliArgs: ['--typescript', '--no-welcome']})
+        .then(() => {
+          const appPath = path.resolve(process.cwd(), 'app');
+          expect(fs.existsSync(appPath)).to.equal(true);
         });
     });
   });

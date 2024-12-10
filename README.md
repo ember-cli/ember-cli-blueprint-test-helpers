@@ -174,6 +174,7 @@ Create a new Ember.js app or addon in the current working directory.
 
 - `{Object} [options]` optional parameters
 - `{String} [options.target='app']` the type of project to create (`app`, `addon` or `in-repo-addon`)
+- `{string[]} [options.extraCliArgs=[]]` any extra arguments you want to pass to ember-cli
 
 **Returns:** `{Promise}`
 
