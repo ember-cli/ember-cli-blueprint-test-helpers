@@ -5,5 +5,4 @@
 /.eslintrc.js
 /.github_changelog_generator
 /.github/
-/.travis.yml
 /yarn.lock
