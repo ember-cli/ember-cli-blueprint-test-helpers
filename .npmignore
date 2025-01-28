@@ -4,6 +4,5 @@
 /.eslintignore
 /.eslintrc.js
 /.github_changelog_generator
-/.travis.yml
-/appveyor.yml
+/.github/
 /yarn.lock
