@@ -39,7 +39,7 @@
     "lerna-changelog": "^1.0.1",
     "mocha": "^8.4.0",
     "mocha-eslint": "^4.0.0",
-    "strip-ansi": "^6.0.0"
+    "strip-ansi": "^7.0.1"
   },
   "engines": {
     "node": "10.* || >= 12.*"
